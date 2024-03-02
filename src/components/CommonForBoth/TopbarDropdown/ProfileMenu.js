@@ -63,7 +63,7 @@ const ProfileMenu = props => {
           <i className="uil-angle-down d-none d-xl-inline-block font-size-15"></i>
         </DropdownToggle>
         <DropdownMenu className="dropdown-menu-end">
-          <DropdownItem tag="a" href="/profile">
+          {/* <DropdownItem tag="a" href="/profile">
             {" "}
             <i className="uil uil-user-circle font-size-18 align-middle text-muted me-1"></i>
             {props.t("View Profile")}{" "}
@@ -80,8 +80,8 @@ const ProfileMenu = props => {
           <DropdownItem tag="a" href="auth-lock-screen">
             <i className="uil uil-lock-alt font-size-18 align-middle me-1 text-muted"></i>
             {props.t("Lock screen")}
-          </DropdownItem>
-          <div className="dropdown-divider" />
+          </DropdownItem> */}
+          {/* <div className="dropdown-divider" /> */}
           <Link to="/logout" className="dropdown-item">
             <i className="uil uil-sign-out-alt font-size-18 align-middle me-1 text-muted"></i>
             <span>{props.t("Logout")}</span>

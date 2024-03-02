@@ -71,7 +71,11 @@ $font-weight-semibold: 600;
 $apex-grid-color:  var(--#{$prefix}apex-grid-color);
 
 // auth bg
-$auth-bg: rgba(91,140,232,.25);
+// $auth-bg: 50a5f1 
+$auth-bg: rgba(43,46,59,1);
+// $auth-bg: rgba(137,142,169,1);
+// $auth-bg: rgba(91,116,233,1);
+// $auth-bg: rgba(80,165,241,1);
 
 // table
 $table-head-bg:               $gray-100;

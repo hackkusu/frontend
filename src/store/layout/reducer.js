@@ -24,15 +24,15 @@ import {
 
 const INIT_STATE = {
   layoutType: layoutTypes.VERTICAL,
-  layoutModeType: layoutModeTypes.LIGHT,
+  layoutModeType: layoutModeTypes.DARK,
   layoutWidth: layoutWidthTypes.FLUID,
-  leftSideBarTheme: leftSideBarThemeTypes.LIGHT,
-  topbarTheme: topBarThemeTypes.LIGHT,
-  sidebarSizeType: sidebarSizeTypes.DEFAULT,
+  leftSideBarTheme: leftSideBarThemeTypes.DARK,
+  topbarTheme: topBarThemeTypes.DARK,
+  sidebarSizeType: sidebarSizeTypes.ICON,
   isPreloader: false,
   showRightSidebar: false,
   isMobile: false,
-  showSidebar: true,
+  showSidebar: false,
   leftMenu: false,
 };
 

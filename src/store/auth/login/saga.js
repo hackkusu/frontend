@@ -34,7 +34,7 @@ function* loginUser({ payload: { user, history } }) {
 
 
       const response = yield call(postFakeLogin, {
-        username: user.email,
+        username: user.email, 
         password: user.password,
       })
       

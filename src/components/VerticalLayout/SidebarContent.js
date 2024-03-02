@@ -153,7 +153,7 @@ const SidebarContent = props => {
               </Link>
             </li>
 
-            <li className="menu-title">{props.t("Apps")}</li>
+            {/* <li className="menu-title">{props.t("Apps")}</li>
 
             <li>
               <Link to="/calendar" className=" waves-effect">
@@ -165,14 +165,12 @@ const SidebarContent = props => {
             <li>
               <Link to="/chat" className="waves-effect">
                 <i className="uil-comments-alt"></i>
-                {/* <span className="badge rounded-pill bg-warning float-end"> {props.t("New")} </span> */}
                 <span>{props.t("Chat")}</span>
               </Link>
             </li>
             <li>
               <Link to="/file-manager" className="waves-effect">
                 <i className="uil-comments-alt"></i>
-                {/* <span className="badge rounded-pill bg-warning float-end"> {props.t("New")} </span> */}
                 <span>{props.t("File Manager")}</span>
               </Link>
             </li>
@@ -558,7 +556,10 @@ const SidebarContent = props => {
                   </ul>
                 </li>
               </ul>
-            </li>
+            </li> */}
+
+
+
           </ul>
         </div>
       </SimpleBar>

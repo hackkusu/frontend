@@ -111,12 +111,12 @@ const Login = (props) => {
         <Container>
           <Row>
             <Col lg={12}>
-              <div className="text-center">
+              {/* <div className="text-center">
                 <Link to="/" className="mb-5 d-block auth-logo">
                   <img src={logo} alt="" height="22" className="logo logo-dark" />
                   <img src={logolight} alt="" height="22" className="logo logo-light" />
                 </Link>
-              </div>
+              </div> */}
             </Col>
           </Row>
           <Row className="align-items-center justify-content-center">
@@ -125,7 +125,7 @@ const Login = (props) => {
                 <CardBody className="p-4">
                   <div className="text-center mt-2">
                     <h5 className="text-primary">Welcome Back !</h5>
-                    <p className="text-muted">Sign in to continue to Minible.</p>
+                    <p className="text-muted">Sign in to continue</p>
                   </div>
                   <div className="p-2 mt-4">
                     <Form
@@ -144,7 +144,7 @@ const Login = (props) => {
                           name="email"
                           className="form-control"
                           placeholder="Enter email"
-                          type="text"
+                          type="text" 
                           onChange={validation.handleChange}
                           onBlur={validation.handleBlur}
                           value={validation.values.email || ""}
@@ -253,11 +253,11 @@ const Login = (props) => {
                   </div>
                 </CardBody>
               </Card>
-              <div className="mt-5 text-center">
+              {/* <div className="mt-5 text-center">
                 <p>© {new Date().getFullYear()} Minible. Crafted with <i
                   className="mdi mdi-heart text-danger"></i> by Themesbrand
                         </p>
-              </div>
+              </div> */}
             </Col>
           </Row>
 

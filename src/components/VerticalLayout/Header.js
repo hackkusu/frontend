@@ -154,9 +154,9 @@ const Header = props => {
               </DropdownMenu>
             </Dropdown>
 
-            <LanguageDropdown />
+            {/* <LanguageDropdown /> */}
 
-            <Dropdown
+            {/* <Dropdown
               className="d-none d-lg-inline-block ms-1"
               isOpen={socialDrp}
               toggle={() => {
@@ -214,7 +214,7 @@ const Header = props => {
                   </Row>
                 </div>
               </DropdownMenu>
-            </Dropdown>
+            </Dropdown> */}
 
             <Dropdown className="d-none d-lg-inline-block ms-1">
               <button
@@ -229,18 +229,18 @@ const Header = props => {
               </button>
             </Dropdown>
 
-            <NotificationDropdown />
+            {/* <NotificationDropdown /> */}
 
             <ProfileMenu />
 
-            <div onClick={() => {
+            {/* <div onClick={() => {
               props.showRightSidebarAction(!props.showRightSidebar);
             }}
               className="dropdown d-inline-block">
               <button type="button" className="btn header-item noti-icon right-bar-toggle waves-effect">
                 <i className="uil-cog"></i>
               </button>
-            </div>
+            </div> */}
 
           </div>
         </div>

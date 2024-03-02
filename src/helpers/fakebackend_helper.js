@@ -18,7 +18,19 @@ const isUserAuthenticated = () => {
 const postFakeRegister = (data) => post(url.POST_FAKE_REGISTER, data);
 
 // Login Method
-const postFakeLogin = (data) => { debugger; return axios.post('http://localhost:8000/api/auth/login/', data) }
+const postFakeLogin = (data) => { 
+  debugger; 
+  return axios.post('http://localhost:8000/api/auth/login/', data)
+  .then((tokenResult) => {
+    debugger;
+    return axios.get('http://localhost:8000/api/auth/user/', { headers: {
+    'Authorization': 'token ' + tokenResult?.data?.key
+  }}).then((userResult) => Promise.resolve({
+    ...userResult.data,
+    key: tokenResult?.data?.key,
+    accessToken: `token ${tokenResult?.data?.key}`
+  }) ) }) 
+} 
 
 // postForgetPwd
 const postFakeForgetPwd = (data) => post(url.POST_FAKE_PASSWORD_FORGET, data);

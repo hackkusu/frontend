@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 
 const PagesComingsoon = () => {
 
-  document.title=" Comingsoon | Minible - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Comingsoon | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
 
   useEffect(() => {
     document.body.className = "authentication-bg";
@@ -79,7 +79,7 @@ const PagesComingsoon = () => {
                   </Col>
                 </Row>
 
-                <h4 className="mt-5">Let&apos;s get started with Minible</h4>
+                <h4 className="mt-5">Let&apos;s get started with HackUSU</h4>
                 <p className="text-muted">It will be as simple as Occidental in fact it will be Occidental.</p>
 
                 <Row className="justify-content-center mt-5">

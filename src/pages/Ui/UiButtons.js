@@ -15,7 +15,7 @@ import Breadcrumbs from "../../components/Common/Breadcrumb";
 
 const UiButtons = () => {
 
-  document.title=" Buttons | Minible - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Buttons | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
 
   const [drp_link, setdrp_link] = useState(false);
 

@@ -41,7 +41,7 @@ const LoadingContainer = () => <div>Loading...</div>
 
 const UiLightbox = (props) => {
 
-  document.title=" Lightbox | Minible - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Lightbox | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
 
   const selectedPlace = {}
 
@@ -141,7 +141,7 @@ const UiLightbox = (props) => {
                               setisFits(true)
                             }}
                             className="img-fluid"
-                            alt="Minible"
+                            alt="HackUSU"
                             src={img2}
                             width="145"
                           />

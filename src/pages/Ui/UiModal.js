@@ -14,7 +14,7 @@ import Breadcrumbs from "../../components/Common/Breadcrumb";
 
 const UiModal = () => {
 
-  document.title=" Modals | Minible - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Modals | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
 
   const [modal_standard, setmodal_standard] = useState(false);
   const [modal_large, setmodal_large] = useState(false);

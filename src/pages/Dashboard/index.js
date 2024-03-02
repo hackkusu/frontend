@@ -171,7 +171,7 @@ const options4 = {
 
 const Dashboard = () => {
 
-  document.title=" Dashboard | Minible - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Dashboard | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
 
 
   const reports = [
@@ -250,7 +250,7 @@ const Dashboard = () => {
     <React.Fragment>
       <div className="page-content">
         <Container fluid>
-          <Breadcrumbs title="Minible" breadcrumbItem="Dashboard" />
+          <Breadcrumbs title="HackUSU" breadcrumbItem="Dashboard" />
           <Row>
             <MiniWidget reports={reports} />
           </Row>

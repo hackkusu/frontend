@@ -24,7 +24,7 @@ import classnames from "classnames"
 
 const UiTabsAccordions = () => {
 
-  document.title=" Tabs & Accordions | Minible - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Tabs & Accordions | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
 
   const [activeTab, setactiveTab] = useState("1")
   const [activeTab1, setactiveTab1] = useState("5")

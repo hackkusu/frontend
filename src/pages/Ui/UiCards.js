@@ -33,7 +33,7 @@ import Breadcrumbs from "../../components/Common/Breadcrumb";
 
 const UiCards = props => {
 
-  document.title=" Cards | Minible - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Cards | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
 
   return (
     <React.Fragment>

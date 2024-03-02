@@ -14,7 +14,7 @@ import logolight from "../../assets/images/logo-light.png"
 
 const Login = () => {
 
-  document.title=" Login | Minible - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Login | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
   // Form validation 
   const validation = useFormik({
     // enableReinitialize : use this flag when initial values needs to be changed
@@ -64,7 +64,7 @@ const Login = () => {
                 <CardBody className="p-4">
                   <div className="text-center mt-2">
                     <h5 className="text-primary">Welcome Back !</h5>
-                    <p className="text-muted">Sign in to continue to Minible.</p>
+                    <p className="text-muted">Sign in to continue to HackUSU.</p>
                   </div>
                   <div className="p-2 mt-4">
                   <Form className="form-horizontal"
@@ -179,7 +179,7 @@ const Login = () => {
 
               <div className="mt-5 text-center">
                 <p>
-                  © {new Date().getFullYear()} Minible. Crafted with{" "}
+                  © {new Date().getFullYear()} HackUSU. Crafted with{" "}
                   <i className="mdi mdi-heart text-danger" /> by Themesbrand
                   </p>
               </div>

@@ -22,7 +22,7 @@ import logolight from "../../assets/images/logo-light.png"
 
 const ForgetPasswordPage = props => {
 
-  document.title=" Recover Password | Minible - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Recover Password | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
 
 
   const dispatch = useDispatch();
@@ -89,7 +89,7 @@ const ForgetPasswordPage = props => {
 
                     <div className="text-center mt-2">
                       <h5 className="text-primary">Reset Password</h5>
-                      <p className="text-muted">Reset Password with Minible.</p>
+                      <p className="text-muted">Reset Password with HackUSU.</p>
                     </div>
                     <div className="p-2 mt-4">
                       <div className="alert alert-success text-center mb-4" role="alert">
@@ -152,7 +152,7 @@ const ForgetPasswordPage = props => {
                 </Card>
                 <div className="mt-5 text-center">
                 <p>
-                  © {new Date().getFullYear()} Minible. Crafted with{" "}
+                  © {new Date().getFullYear()} HackUSU. Crafted with{" "}
                   <i className="mdi mdi-heart text-danger" /> by Themesbrand
                 </p>
                 </div>

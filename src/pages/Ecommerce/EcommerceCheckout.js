@@ -21,7 +21,7 @@ import Breadcrumbs from "../../components/Common/Breadcrumb";
 
 const EcommerceCheckout = () => {
 
-  document.title=" Checkout | Minible - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Checkout | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
 
   const [isOpen, setIsOpen] = useState(true);
 

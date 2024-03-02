@@ -8,7 +8,7 @@ import "./datatables.scss"
 
 const DatatableTables = () => {
 
-  document.title=" Data Table | Minible - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Data Table | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
 
   const data = {
     columns: [

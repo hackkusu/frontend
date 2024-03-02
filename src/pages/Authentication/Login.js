@@ -30,7 +30,7 @@ import { facebook, google } from "../../config"
 
 const Login = (props) => {
 
-  document.title=" Login | Minible - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Login | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
 
   const dispatch = useDispatch();
 
@@ -254,7 +254,7 @@ const Login = (props) => {
                 </CardBody>
               </Card>
               {/* <div className="mt-5 text-center">
-                <p>© {new Date().getFullYear()} Minible. Crafted with <i
+                <p>© {new Date().getFullYear()} HackUSU. Crafted with <i
                   className="mdi mdi-heart text-danger"></i> by Themesbrand
                         </p>
               </div> */}

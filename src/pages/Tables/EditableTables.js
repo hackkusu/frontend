@@ -47,7 +47,7 @@ const columns = [
 
 const EditableTables = () => {
 
-  document.title=" Editable Table | Minible - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Editable Table | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
 
   return (
     <React.Fragment>

@@ -13,7 +13,7 @@ import {
 } from "react-sparklines";
 
 const SparklineChart = () => {
-  document.title=" Sparkline Chart | Minible - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Sparkline Chart | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
 
   return (
     <React.Fragment>

@@ -32,7 +32,7 @@ import { editProfile, resetProfileFlag } from "../../store/actions";
 
 const UserProfile = props => {
 
-  document.title=" Profile | Minible - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Profile | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
 
 
   const dispatch = useDispatch();
@@ -105,7 +105,7 @@ const UserProfile = props => {
       <div className="page-content">
         <Container fluid>
           {/* Render Breadcrumb */}
-          <Breadcrumb title="Minible" breadcrumbItem="Profile" />
+          <Breadcrumb title="HackUSU" breadcrumbItem="Profile" />
 
           <Row>
             <Col lg="12">

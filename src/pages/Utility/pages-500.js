@@ -7,7 +7,7 @@ import errorImg from "../../assets/images/500-error.png"
 
 const Pages500 = () => {
 
-  document.title=" Error 500 | Minible - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Error 500 | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
 
   useEffect(() => {
     document.body.className = "authentication-bg";

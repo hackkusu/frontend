@@ -14,7 +14,7 @@ import { getShops } from "../../../store/e-commerce/actions"
 
 const EcommerceShops = props => {
 
-  document.title=" Shops | Minible - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Shops | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
 
   const { shops, onGetShops } = props
 

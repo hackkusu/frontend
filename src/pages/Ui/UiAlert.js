@@ -18,7 +18,7 @@ import Breadcrumbs from "../../components/Common/Breadcrumb";
 
 const UiAlert = () => {
 
-  document.title=" Alert | Minible - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Alert | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
 
   const [visible, setVisible] = useState(false);
 

@@ -14,7 +14,7 @@ import Breadcrumbs from "../../components/Common/Breadcrumb"
 
 const UiGrid = () => {
 
-  document.title=" Grid | Minible - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Grid | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
 
   return (
     <React.Fragment>

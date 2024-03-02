@@ -41,7 +41,7 @@ import { createSelector } from "reselect";
 
 const EcommerceProducts = props => {
 
-  document.title=" Products | Minible - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Products | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
 
   const dispatch = useDispatch();
 

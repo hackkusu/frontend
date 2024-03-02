@@ -173,7 +173,7 @@ const EmailTemplateBilling = props => {
                                           Thanks for using{" "}
                                           <b style={{ fontWeight: "600" }}>
                                             {" "}
-                                              Minible
+                                              HackUSU
                                             </b>
                                             .
                                           </h2>
@@ -578,7 +578,7 @@ const EmailTemplateBilling = props => {
                                         align="center"
                                         valign="top"
                                       >
-                                        Minible Inc. 2896 Howell Rd,
+                                        HackUSU Inc. 2896 Howell Rd,
                                         Russellville, AR, 72823
                                         </td>
                                     </tr>
@@ -606,7 +606,7 @@ const EmailTemplateBilling = props => {
                                         }}
                                         valign="top"
                                       >
-                                        © {new Date().getFullYear()} Minible
+                                        © {new Date().getFullYear()} HackUSU
                                         </td>
                                     </tr>
                                   </tbody>

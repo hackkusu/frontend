@@ -22,7 +22,7 @@ import Breadcrumbs from "../../components/Common/Breadcrumb";
 
 const FormValidations = (props) => {
 
-  document.title=" Form Validation | Minible - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Form Validation | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
 
 
   // Form validation 

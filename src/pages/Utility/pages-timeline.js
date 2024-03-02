@@ -11,7 +11,7 @@ import Breadcrumbs from "../../components/Common/Breadcrumb";
 import { Link } from "react-router-dom";
 
 const PagesTimeline = () => {
-  document.title=" Timeline | Minible - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Timeline | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
 
   //Owl Carousel Settings
   const options = {

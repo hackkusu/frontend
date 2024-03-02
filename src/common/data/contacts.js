@@ -121,7 +121,7 @@ const userProfile = {
     },
     {
       id: 2,
-      name: "Minible Admin",
+      name: "HackUSU Admin",
       startDate: "06 Jun, 2020",
       status: "Open",
       badge: "primary",
@@ -135,7 +135,7 @@ const userProfile = {
     },
     {
       id: 4,
-      name: "Minible Landing",
+      name: "HackUSU Landing",
       startDate: "13 May, 2020",
       status: "Complete",
       badge: "success",

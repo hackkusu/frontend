@@ -8,7 +8,7 @@ import Breadcrumbs from "../../components/Common/Breadcrumb"
 
 const ResponsiveTables = () => {
 
-  document.title=" Responsive Table | Minible - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Responsive Table | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
 
   return (
     <React.Fragment>

@@ -229,7 +229,7 @@ const Header = props => {
               </button>
             </Dropdown>
 
-            {/* <NotificationDropdown /> */}
+            <NotificationDropdown />
 
             <ProfileMenu />
 

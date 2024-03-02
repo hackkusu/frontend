@@ -13,7 +13,7 @@ import PolarChart from "../AllCharts/chartjs/polarchart"
 
 const ChartjsChart = () => {
 
-  document.title=" Chartjs Chart | Minible - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Chartjs Chart | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
 
   return (
     <React.Fragment>

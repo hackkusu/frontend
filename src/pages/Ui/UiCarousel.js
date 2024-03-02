@@ -22,7 +22,7 @@ import Breadcrumbs from "../../components/Common/Breadcrumb";
 
 const UiCarousel = () => {
 
-  document.title=" Carousel | Minible - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Carousel | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
 
   return (
     <React.Fragment>

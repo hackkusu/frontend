@@ -15,7 +15,7 @@ var brand = ""
 
 const IconFontawesome = props => {
 
-  document.title=" Font awesome | Minible - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Font awesome | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
 
   useEffect(() => {
     for (let entry of icons.data) {

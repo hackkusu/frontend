@@ -10,7 +10,7 @@ const LoadingContainer = () => <div>Loading...</div>
 
 const MapsGoogle = props => {
 
-  document.title=" Google | Minible - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Google | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
 
   const selectedPlace = {}
 

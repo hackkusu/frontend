@@ -16,7 +16,7 @@ import Breadcrumbs from "../../components/Common/Breadcrumb";
 
 const FormRepeater = () => {
 
-  document.title=" Form Repeater | Minible - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Form Repeater | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
 
   const [rows1, setrows1] = useState([{ id: 1 }]);
 

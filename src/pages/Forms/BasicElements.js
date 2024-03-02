@@ -18,7 +18,7 @@ import Breadcrumbs from "../../components/Common/Breadcrumb"
 
 const BasicElements = () => {
 
-  document.title=" Basic Elements | Minible - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Basic Elements | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
 
   const [customchk, setcustomchk] = useState(true)
   const [toggleSwitch, settoggleSwitch] = useState(true)

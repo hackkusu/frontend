@@ -17,7 +17,7 @@ import { Link } from "react-router-dom";
 
 const FormUpload = () => {
 
-  document.title=" Form File Upload | Minible - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Form File Upload | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
 
   const [selectedFiles, setselectedFiles] = useState([]);
 

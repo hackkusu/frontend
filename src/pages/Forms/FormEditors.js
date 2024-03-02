@@ -20,7 +20,7 @@ import Breadcrumbs from "../../components/Common/Breadcrumb"
 
 const FormEditors = () => {
 
-  document.title=" Form Editors | Minible - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Form Editors | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
 
   return (
     <React.Fragment>

@@ -40,7 +40,7 @@ import {
 
 const Chat = props => {
 
-    document.title=" Chat | Minible - Responsive Bootstrap 5 Admin Dashboard"
+    document.title=" Chat | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
 
 
     const { chats, groups, messages } = props;
@@ -113,7 +113,7 @@ const Chat = props => {
             <div className="page-content">
                 <Container fluid>
                     {/* Render Breadcrumb */}
-                    <Breadcrumbs title="Minible" breadcrumbItem="Chat" />
+                    <Breadcrumbs title="HackUSU" breadcrumbItem="Chat" />
 
                     <div className="d-lg-flex mb-4">
                         <Card className="chat-leftsidebar">

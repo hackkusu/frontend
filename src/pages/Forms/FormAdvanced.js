@@ -84,7 +84,7 @@ const optionGroup = [
 
 const FormAdvanced = () => {
 
-  document.title=" Form Advanced | Minible - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Form Advanced | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
 
   const [sq1, setsq1] = useState(true);
   const [sq2, setsq2] = useState(true);

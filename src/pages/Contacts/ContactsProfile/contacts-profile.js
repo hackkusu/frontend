@@ -33,7 +33,7 @@ import SimpleBar from "simplebar-react";
 
 const ContactsProfile = props => {
 
-  document.title=" Profile | Minible - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Profile | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
 
   const { userProfile, onGetUserProfile } = props;
 
@@ -207,7 +207,7 @@ const ContactsProfile = props => {
                               </tr>
                               <tr>
                                 <th scope="row">02</th>
-                                <td><Link to="#" className="text-reset">Minible Admin</Link></td>
+                                <td><Link to="#" className="text-reset">HackUSU Admin</Link></td>
                                 <td>
                                   06 Jun, 2020
                                 </td>
@@ -251,7 +251,7 @@ const ContactsProfile = props => {
                               </tr>
                               <tr>
                                 <th scope="row">04</th>
-                                <td><Link to="#" className="text-reset">Minible Landing</Link></td>
+                                <td><Link to="#" className="text-reset">HackUSU Landing</Link></td>
                                 <td>
                                   13 May, 2020
                                 </td>

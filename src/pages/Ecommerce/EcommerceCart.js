@@ -19,7 +19,7 @@ import Breadcrumbs from "../../components/Common/Breadcrumb";
 
 const EcommerceCart = () => {
 
-  document.title=" Cart | Minible - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Cart | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
 
   const [productList, setproductList] = useState(productListvar);
 

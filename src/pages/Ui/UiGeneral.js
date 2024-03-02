@@ -23,7 +23,7 @@ import Breadcrumbs from "../../components/Common/Breadcrumb"
 
 const UiGeneral = () => {
 
-  document.title=" General | Minible - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" General | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
 
   const [popovertop, setpopovertop] = useState(false)
   const [popoverleft, setpopoverleft] = useState(false)

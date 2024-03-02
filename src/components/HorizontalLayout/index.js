@@ -48,7 +48,7 @@ const path = useLocation();
     const title = path.pathname;
     let currentage = title.charAt(1).toUpperCase() + title.slice(2);
 
-    document.title = currentage + " | Minible - React Admin & Dashboard Template";
+    document.title = currentage + " | HackUSU - React Admin & Dashboard Template";
   }, [path.pathname]);
 
   useEffect(() => {

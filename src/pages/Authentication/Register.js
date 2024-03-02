@@ -23,7 +23,7 @@ import logolight from "../../assets/images/logo-light.png"
 
 const Register = props => {
 
-  document.title=" Register | Minible - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Register | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
 
   const dispatch = useDispatch();
 
@@ -97,7 +97,7 @@ const Register = props => {
                 <CardBody className="p-4">
                   <div className="text-center mt-2">
                     <h5 className="text-primary">Register Account</h5>
-                    <p className="text-muted">Get your free Minible account now.</p>
+                    <p className="text-muted">Get your free HackUSU account now.</p>
                   </div>
                   <div className="p-2 mt-4">
                   <Form
@@ -229,7 +229,7 @@ const Register = props => {
                   </CardBody>
               </Card>
               <div className="mt-5 text-center">
-                <p>© {new Date().getFullYear()} Minible. Crafted with <i
+                <p>© {new Date().getFullYear()} HackUSU. Crafted with <i
                     className="mdi mdi-heart text-danger"></i> by Themesbrand
                         </p>
               </div>

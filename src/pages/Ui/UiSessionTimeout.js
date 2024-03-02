@@ -56,7 +56,7 @@ class UiSessionTimeout extends Component {
 
 
   render() {
-    document.title = "Session Timeout | Minible - Responsive Bootstrap 5 Admin Dashboard"; 
+    document.title = "Session Timeout | HackUSU - Responsive Bootstrap 5 Admin Dashboard"; 
     return (
       <React.Fragment>
         

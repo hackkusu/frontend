@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Logout = () => {
 
-  document.title=" Logout | Minible - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Logout | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
 
   const history = useNavigate();
   const dispatch = useDispatch();

@@ -6,7 +6,7 @@ import Breadcrumbs from "../../components/Common/Breadcrumb";
 
 const UiProgressbar = () => {
 
-  document.title=" Progressbar | Minible - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Progressbar | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
 
   return (
     <React.Fragment>

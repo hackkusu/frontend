@@ -307,7 +307,7 @@ const EmailAlertTemplte = props => {
                                         }}
                                         valign="top"
                                       >
-                                        Thanks for choosing <b>Minible</b>{" "}
+                                        Thanks for choosing <b>HackUSU</b>{" "}
                                           Admin.
                                         </td>
                                     </tr>
@@ -333,7 +333,7 @@ const EmailAlertTemplte = props => {
                                         }}
                                         valign="top"
                                       >
-                                        <b>Minible</b>
+                                        <b>HackUSU</b>
                                         <p>Support Team</p>
                                       </td>
                                     </tr>
@@ -361,7 +361,7 @@ const EmailAlertTemplte = props => {
                                         }}
                                         valign="top"
                                       >
-                                        © {new Date().getFullYear()} Minible
+                                        © {new Date().getFullYear()} HackUSU
                                         </td>
                                     </tr>
                                   </tbody>

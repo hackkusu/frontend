@@ -18,7 +18,7 @@ import Breadcrumbs from "../../components/Common/Breadcrumb"
 
 const Apexchart = () => {
 
-  document.title=" Apex Chart | Minible - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Apex Chart | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
 
   return (
     <React.Fragment>

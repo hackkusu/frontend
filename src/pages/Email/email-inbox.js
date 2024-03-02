@@ -14,7 +14,7 @@ import EmailToolbar from "./email-toolbar"
 
 const EmailInbox = () => {
 
-  document.title=" Inbox | Minible - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Inbox | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
 
   return (
     <React.Fragment>

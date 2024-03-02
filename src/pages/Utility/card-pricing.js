@@ -5,7 +5,7 @@ import { Card, CardBody, Col } from "reactstrap"
 
 const CardPricing = props => {
   
-  document.title=" Pricing | Minible - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Pricing | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
 
   return (
     <React.Fragment>

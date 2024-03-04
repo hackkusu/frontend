@@ -2,6 +2,7 @@ import React from "react";
 import ReactApexChart from "react-apexcharts";
 import { Card, CardBody, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem, CardTitle } from "reactstrap";
 import CountUp from 'react-countup';
+import SplineArea from "../AllCharts/apex/SplineArea"
 
 const SalesAnalyticsChart = () => {
 
@@ -95,9 +96,9 @@ const SalesAnalyticsChart = () => {
                             </DropdownMenu>
                         </UncontrolledDropdown>
                     </div>
-                    <CardTitle className="mb-4 h4">Sales Analytics</CardTitle>
+                    <CardTitle className="mb-4 h4">Responses Over Time</CardTitle>
                     <div className="mt-1">
-                        <ul className="list-inline main-chart mb-0">
+                        {/* <ul className="list-inline main-chart mb-0">
                             <li className="list-inline-item chart-border-left me-0 border-0">
                                 <h3 className="text-primary"><span><CountUp end={2371} separator="," prefix="$" /></span><span className="text-muted d-inline-block font-size-15 ms-3">Income</span></h3>
                             </li>{" "}
@@ -108,17 +109,18 @@ const SalesAnalyticsChart = () => {
                             <li className="list-inline-item chart-border-left me-0">
                                 <h3><span data-plugin="counterup"><CountUp end={3.6} decimals={1} suffix="%" /></span><span className="text-muted d-inline-block font-size-15 ms-3">Conversation Ratio</span></h3>
                             </li>
-                        </ul>
+                        </ul> */}
                     </div>
 
                     <div className="mt-3">
-                        <ReactApexChart
+                        <SplineArea />
+                        {/* <ReactApexChart
                             options={options}
                             series={series}
                             height="339"
                             type="line"
                             className="apex-charts"
-                        />
+                        /> */}
                     </div>
                 </CardBody>
             </Card>

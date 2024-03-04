@@ -5,34 +5,22 @@ const TopProduct = () => {
 
     const progressbars = [
         {
-            id: 1,
-            title: 'Desktops',
-            value: 52,
-            color: 'primary'
-        },
-        {
-            id: 2,
-            title: 'iPhones',
-            value: 45,
-            color: 'info'
-        },
-        {
             id: 3,
-            title: 'Android',
+            title: 'Positive',
             value: 48,
             color: 'success'
         },
         {
             id: 4,
-            title: 'Tablets',
+            title: 'Nuetral',
             value: 78,
             color: 'warning'
         },
         {
             id: 5,
-            title: 'Cables',
+            title: 'Negative',
             value: 63,
-            color: 'purple'
+            color: 'danger'
         },
     ]
 
@@ -52,7 +40,7 @@ const TopProduct = () => {
                             </DropdownMenu>
                         </UncontrolledDropdown>
                     </div>
-                    <h4 className="card-title mb-4">Top Selling Products</h4>
+                    <h4 className="card-title mb-4">Sentiment Overview</h4>
 
                     {progressbars.map((progressbar, key) => (
                         <Row className="align-items-center g-0 mt-3" key={key}>

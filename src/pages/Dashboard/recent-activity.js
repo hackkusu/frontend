@@ -18,41 +18,28 @@ const RecentActivity = () => {
                     </UncontrolledDropdown>
                 </div>
 
-                <h4 className="card-title mb-4">Recent Activity</h4>
+                <h4 className="card-title mb-4">Highlight Responses</h4>
 
                 <SimpleBar className="activity-feed mb-0 ps-2" style={{ maxHeight: '336px' }}>
                     <li className="feed-item">
                         <div className="feed-item-list">
                             <p className="text-muted mb-1 font-size-13">Today<small className="d-inline-block ms-1">12:20 pm</small></p>
-                            <p className="mt-0 mb-0">Andrei Coman magna sed porta finibus, risus posted a new article: <span className="text-primary">Forget UX Rowland</span></p>
+                            <p className="mt-0 mb-0">I really appreciated the depth of discussion around ethical considerations in law the practical examples made the theory much more accessible.</p>
+                            
+                            <span className="badge bg-soft-success font-size-12">Success</span>
                         </div>
                     </li>
                     <li className="feed-item">
                         <p className="text-muted mb-1 font-size-13">22 Jul, 2020 <small className="d-inline-block ms-1">12:36 pm</small></p>
-                        <p className="mt-0 mb-0">Andrei Coman posted a new article: <span
-                            className="text-primary">Designer Alex</span></p>
+                        <p className="mt-0 mb-0">I found the lecture to be a good refresher on some of the basics but im looking forward to more engaging content in future sessions."</p>
+                        <span className="badge bg-soft-warning font-size-12">Nuetral</span>
                     </li>
                     <li className="feed-item">
                         <p className="text-muted mb-1 font-size-13">18 Jul, 2020 <small className="d-inline-block ms-1">07:56 am</small></p>
-                        <p className="mt-0 mb-0">Zack Wetass, sed porta finibus, risus Chris Wallace
-                            Commented <span className="text-primary"> Developer Moreno</span></p>
+                        <p className="mt-0 mb-0">I think the lecture could benefit from a clearer structure and more relatable examples it was hard to follow the main points at times.</p>
+                            <span className="badge bg-soft-danger font-size-12">Negative</span>
                     </li>
-                    <li className="feed-item">
-                        <p className="text-muted mb-1 font-size-13">10 Jul, 2020 <small className="d-inline-block ms-1">08:42 pm</small></p>
-                        <p className="mt-0 mb-0">Zack Wetass, Chris combined Commented <span
-                            className="text-primary">UX Murphy</span></p>
-                    </li>
-
-                    <li className="feed-item">
-                        <p className="text-muted mb-1 font-size-13">23 Jun, 2020 <small className="d-inline-block ms-1">12:22 am</small></p>
-                        <p className="mt-0 mb-0">Zack Wetass, sed porta finibus, risus Chris Wallace
-                            Commented <span className="text-primary"> Developer Moreno</span></p>
-                    </li>
-                    <li className="feed-item pb-1">
-                        <p className="text-muted mb-1 font-size-13">20 Jun, 2020 <small className="d-inline-block ms-1">09:48 pm</small></p>
-                        <p className="mt-0 mb-0">Zack Wetass, Chris combined Commented <span
-                            className="text-primary">UX Murphy</span></p>
-                    </li>
+                    
 
                 </SimpleBar>
 

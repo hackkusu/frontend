@@ -17,6 +17,9 @@ import LatestTransaction from "./latest-transaction";
 
 //Import Image
 import setupanalytics from "../../assets/images/setup-analytics-amico.svg";
+import PieChart from "../AllCharts/apex/PieChart"
+
+import SplineArea from "../AllCharts/apex/SplineArea"
 
 const series1 = [{
   data: [25, 66, 41, 89, 63, 25, 44, 20, 36, 40, 54]
@@ -252,16 +255,18 @@ const Dashboard = () => {
         <Container fluid>
           <Breadcrumbs title="HackUSU" breadcrumbItem="Dashboard" />
           <Row>
-            <MiniWidget reports={reports} />
+            {/* <MiniWidget reports={reports} /> */}
+
           </Row>
 
           <Row>
-            <Col xl={8}>
+            <Col xl={12}>
               <SalesAnalyticsChart />
             </Col>
-            <Col xl={4}>
-              <Card className="bg-primary">
+            <Col xl={12}>
+              {/* <Card className="">
                 <CardBody>
+
                   <Row className="align-items-center">
                     <Col sm={8}>
                       <p className="text-white font-size-18">Enhance your <b>Campaign</b> for better outreach <i className="mdi mdi-arrow-right"></i></p>
@@ -270,28 +275,28 @@ const Dashboard = () => {
                       </div>
                     </Col>
                     <Col sm={4}>
-                      <div className="mt-4 mt-sm-0">
-                        <img src={setupanalytics} className="img-fluid" alt="" />
-                      </div>
+                    <PieChart />
                     </Col>
                   </Row>
+                  
                 </CardBody>
-              </Card>
+              </Card> */}
+              
               <TopProduct />
             </Col>
           </Row>
           <Row>
-            <Col xl={4}>
+            {/* <Col xl={4}>
               <TopUser />
-            </Col>
-            <Col xl={4}>
+            </Col> */}
+            <Col xl={12}>
               <RecentActivity />
             </Col>
-            <Col xl={4}>
+            {/* <Col xl={4}>
               <SocialSource />
-            </Col>
+            </Col> */}
           </Row>
-          <LatestTransaction />
+          {/* <LatestTransaction /> */}
         </Container>
       </div>
     </React.Fragment>

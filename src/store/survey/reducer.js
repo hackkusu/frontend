@@ -1,6 +1,8 @@
 import {
   GET_SURVEYS_FAIL,
   GET_SURVEYS_SUCCESS,
+  GET_PHONES_FAIL,
+  GET_PHONES_SUCCESS,
   GET_SURVEY_DETAIL_SUCCESS,
   GET_SURVEY_DETAIL_FAIL,
   ADD_SURVEY_SUCCESS,
@@ -14,6 +16,7 @@ import {
 const INIT_STATE = {
   surveys: [],
   surveyDetail: {},
+  phones: [],
   error: {},
 }
 
@@ -31,47 +34,59 @@ const Surveys = (state = INIT_STATE, action) => {
         error: action.payload,
       }
 
-      case ADD_SURVEY_SUCCESS:
-        return {
-          ...state,
-          surveys: [...state.surveys, action.payload],
-        }
+    case GET_PHONES_SUCCESS:
+      return {
+        ...state,
+        phones: action.payload,
+      }
 
-      case ADD_SURVEY_FAIL:
-        return {
-          ...state,
-          error: action.payload,
-        }
+    case GET_PHONES_FAIL:
+      return {
+        ...state,
+        error: action.payload,
+      }
 
-        case UPDATE_SURVEY_SUCCESS:
-          return {
-            ...state,
-            surveys: state.surveys.map(survey => 
-              survey.id.toString() === action.payload.id.toString()
-              ? {survey, ...action.payload}
-              : survey
-              ),
-          }
+    case ADD_SURVEY_SUCCESS:
+      return {
+        ...state,
+        surveys: [...state.surveys, action.payload],
+      }
 
-          case UPDATE_SURVEY_FAIL:
-            return {
-              ...state,
-              error: action.payload
-            }
+    case ADD_SURVEY_FAIL:
+      return {
+        ...state,
+        error: action.payload,
+      }
 
-            case DELETE_SURVEY_SUCCESS: 
-            return {
-              ...state,
-              surveys: state.surveys.filter(
-                survey => survey.id.toString() !== action.payload.toString()
-              ),
-            }
+    case UPDATE_SURVEY_SUCCESS:
+      return {
+        ...state,
+        surveys: state.surveys.map(survey =>
+          survey.id.toString() === action.payload.id.toString()
+            ? { survey, ...action.payload }
+            : survey
+        ),
+      }
 
-            case DELETE_SURVEY_FAIL:
-              return {
-                ...state,
-                error: action.payload
-              }
+    case UPDATE_SURVEY_FAIL:
+      return {
+        ...state,
+        error: action.payload
+      }
+
+    case DELETE_SURVEY_SUCCESS:
+      return {
+        ...state,
+        surveys: state.surveys.filter(
+          survey => survey.id.toString() !== action.payload.toString()
+        ),
+      }
+
+    case DELETE_SURVEY_FAIL:
+      return {
+        ...state,
+        error: action.payload
+      }
 
     case GET_SURVEY_DETAIL_SUCCESS:
       return {

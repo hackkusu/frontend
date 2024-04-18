@@ -12,7 +12,7 @@ import * as Yup from "yup";
 import { useFormik } from "formik";
 
 // actions
-import { getSurveyDetail, addNewSurvey, getSurveys, updateSurvey } from "../../store/actions"
+import { getSurveyDetail, addNewSurvey, getSurveys, updateSurvey, getPhones } from "../../store/actions"
 
 import { withTranslation } from "react-i18next";
 import { connect } from "react-redux";
@@ -42,11 +42,12 @@ const SurveyModal = (props) => {
       // dispatch(addNewSurvey(values));
 
       dispatch(updateSurvey(values));
-      dispatch(getSurveyDetail(2));
+      // dispatch(getSurveyDetail(2));
     }
   });
 
   useEffect(() => {
+    dispatch(getPhones());
     dispatch(getSurveyDetail(2));
   }, []);
 
@@ -124,6 +125,20 @@ const SurveyModal = (props) => {
             ) : null}
           </div>
 
+          {/* <div className="mb-3">
+            <label className="col-md-2 col-form-label">Select</label>
+            <div className="col-md-10">
+              <select onChange={validation.handleChange}
+                onBlur={validation.handleBlur}
+                value={validation.values.phone_id || ""}
+                className="form-control">
+                <option>Select</option>
+                <option>Large select</option>
+                <option>Small select</option>
+              </select>
+            </div>
+          </div> */}
+
 
           <div className="mb-3">
             <label
@@ -170,11 +185,6 @@ const SurveyModal = (props) => {
 SurveyModal.propTypes = {
   open: PropTypes.any,
   closeModal: PropTypes.any
-
-  // // survey stuff
-  // getSurveys: PropTypes.any,
-  // getSurveyDetail: PropTypes.any,
-  // addNewSurvey: PropTypes.any,
 }
 
 const mapStatetoProps = state => {
@@ -182,10 +192,11 @@ const mapStatetoProps = state => {
   const {
     surveys,
     surveyDetail,
+    phones,
     error
   } = state.surveys;
 
-  return { surveys, surveyDetail, error };
+  return { surveys, phones, surveyDetail, error };
 };
 
 export default connect(mapStatetoProps, {

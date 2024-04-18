@@ -6,12 +6,15 @@ import {
   GET_SURVEY_DETAIL,
   ADD_NEW_SURVEY,
   UPDATE_SURVEY,
-  DELETE_SURVEY
+  DELETE_SURVEY,
+  GET_PHONES
  } from "./actionTypes"
  
 import {
   getSurveysSuccess,
   getSurveysFail,
+  getPhonesSuccess,
+  getPhonesFail,
   getSurveyDetailSuccess,
   getSurveyDetailFail,
   addSurveySuccess,
@@ -25,6 +28,7 @@ import {
 //Include Both Helper File with needed methods
 import { 
   getSurveys,
+  getPhones,
   getSurveyDetail,
   addNewSurvey,
   updateSurvey,
@@ -37,6 +41,15 @@ function* fetchSurveys() {
     yield put(getSurveysSuccess(response))
   } catch (error) {
     yield put(getSurveysFail(error))
+  }
+}
+
+function* fetchPhones() {
+  try {
+    const response = yield call(getPhones)
+    yield put(getPhonesSuccess(response))
+  } catch (error) {
+    yield put(getPhonesFail(error))
   }
 }
 
@@ -78,6 +91,7 @@ function* fetchSurveyDetail({ surveyId }) {
 
 function* surveySaga() {
   yield takeEvery(GET_SURVEYS, fetchSurveys)
+  yield takeEvery(GET_PHONES, fetchPhones)
   yield takeEvery(GET_SURVEY_DETAIL, fetchSurveyDetail)
   yield takeEvery(ADD_NEW_SURVEY, onAddNewSurvey);
   yield takeEvery(UPDATE_SURVEY, onUpdateSurvey);

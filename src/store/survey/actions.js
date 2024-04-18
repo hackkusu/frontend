@@ -2,6 +2,9 @@ import {
   GET_SURVEYS,
   GET_SURVEYS_FAIL,
   GET_SURVEYS_SUCCESS,
+  GET_PHONES,
+  GET_PHONES_SUCCESS,
+  GET_PHONES_FAIL,
   GET_SURVEY_DETAIL,
   GET_SURVEY_DETAIL_FAIL,
   GET_SURVEY_DETAIL_SUCCESS,
@@ -27,6 +30,20 @@ export const getSurveysSuccess = surveys => ({
 
 export const getSurveysFail = error => ({
   type: GET_SURVEYS_FAIL,
+  payload: error,
+})
+
+export const getPhones = () => ({
+  type: GET_PHONES,
+})
+
+export const getPhonesSuccess = phones => ({
+  type: GET_PHONES_SUCCESS,
+  payload: phones,
+})
+
+export const getPhonesFail = error => ({
+  type: GET_PHONES_FAIL,
   payload: error,
 })
 

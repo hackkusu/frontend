@@ -42,7 +42,7 @@ const SurveyModal = (props) => {
       // dispatch(addNewSurvey(values));
 
       dispatch(updateSurvey(values));
-      dispatch(getSurveyDetail(2))
+      dispatch(getSurveyDetail(2));
     }
   });
 

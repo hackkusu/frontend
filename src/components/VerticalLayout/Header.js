@@ -1,13 +1,14 @@
 import PropTypes from 'prop-types';
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 
 import { connect } from "react-redux";
-import { Form, Input, Button, Row, Col } from "reactstrap";
+import { Input, Button, Row, Col } from "reactstrap";
 
 import { Link } from "react-router-dom";
 
 // Reactstrap
-import { Dropdown, DropdownToggle, DropdownMenu } from "reactstrap";
+import { Form, Dropdown, DropdownToggle, DropdownMenu, Modal, Label, FormFeedback } from "reactstrap";
 
 // Import menuDropdown
 import LanguageDropdown from "../CommonForBoth/TopbarDropdown/LanguageDropdown";
@@ -36,36 +37,19 @@ import {
   // changeSidebarType,
 } from "../../store/actions";
 
+import SurveyModal from '../Common/SurveyModal';
+
+// Formik validation
+import * as Yup from "yup";
+import { useFormik } from "formik";
+
+
 const Header = props => {
   const [search, setsearch] = useState(false);
   const [socialDrp, setsocialDrp] = useState(false);
+  const [modal_mdo, setmodal_mdo] = useState("@mdo");
+  const [modal_mdotoggle, setmodal_mdotoggle] = useState(false);
 
-  function toggleFullscreen() {
-    if (
-      !document.fullscreenElement &&
-      /* alternative standard method */ !document.mozFullScreenElement &&
-      !document.webkitFullscreenElement
-    ) {
-      // current working methods
-      if (document.documentElement.requestFullscreen) {
-        document.documentElement.requestFullscreen();
-      } else if (document.documentElement.mozRequestFullScreen) {
-        document.documentElement.mozRequestFullScreen();
-      } else if (document.documentElement.webkitRequestFullscreen) {
-        document.documentElement.webkitRequestFullscreen(
-          Element.ALLOW_KEYBOARD_INPUT
-        );
-      }
-    } else {
-      if (document.cancelFullScreen) {
-        document.cancelFullScreen();
-      } else if (document.mozCancelFullScreen) {
-        document.mozCancelFullScreen();
-      } else if (document.webkitCancelFullScreen) {
-        document.webkitCancelFullScreen();
-      }
-    }
-  }
 
   function tToggle() {
     var body = document.body;
@@ -73,10 +57,20 @@ const Header = props => {
 
     body.classList.toggle("vertical-collpsed");
     body.classList.toggle("sidebar-enable");
-    if (windowSize > 991){
+    if (windowSize > 991) {
       (body.getAttribute('data-sidebar-size') === 'sm') && windowSize > 991 ? body.setAttribute('data-sidebar-size', 'lg') : body.setAttribute('data-sidebar-size', 'sm');
     }
   }
+
+  function mdo_modal() {
+    setmodal_mdotoggle(!modal_mdotoggle);
+    removeBodyCss();
+  }
+
+  function removeBodyCss() {
+    document.body.classList.add("no_padding");
+  }
+
   return (
     <React.Fragment>
       <header id="page-topbar">
@@ -154,82 +148,24 @@ const Header = props => {
               </DropdownMenu>
             </Dropdown>
 
-            {/* <LanguageDropdown /> */}
 
-            {/* <Dropdown
-              className="d-none d-lg-inline-block ms-1"
-              isOpen={socialDrp}
-              toggle={() => {
-                setsocialDrp(!socialDrp);
+            {/* <DeleteModal show={true} /> */}
+
+            <button
+              type="button"
+              className="btn btn-primary"
+              onClick={() => {
+                mdo_modal();
+                setmodal_mdo("@mdo")
               }}
             >
-              <DropdownToggle
-                className="btn header-item noti-icon waves-effect"
-                tag="button"
-              >
-                <i className="uil-apps"></i>
-              </DropdownToggle>
-              <DropdownMenu className="dropdown-menu-lg dropdown-menu-end" end>
-                <div className="px-lg-2">
-                  <Row className="g-0">
-                    <Col>
-                      <Link className="dropdown-icon-item" to="#">
-                        <img src={github} alt="Github" />
-                        <span>GitHub</span>
-                      </Link>
-                    </Col>
-                    <Col>
-                      <Link className="dropdown-icon-item" to="#">
-                        <img src={bitbucket} alt="bitbucket" />
-                        <span>Bitbucket</span>
-                      </Link>
-                    </Col>
-                    <Col>
-                      <Link className="dropdown-icon-item" to="#">
-                        <img src={dribbble} alt="dribbble" />
-                        <span>Dribbble</span>
-                      </Link>
-                    </Col>
-                  </Row>
+              Update Survey
+            </button>
 
-                  <Row className="g-0">
-                    <Col>
-                      <Link className="dropdown-icon-item" to="#">
-                        <img src={dropbox} alt="dropbox" />
-                        <span>Dropbox</span>
-                      </Link>
-                    </Col>
-                    <Col>
-                      <Link className="dropdown-icon-item" to="#">
-                        <img src={mail_chimp} alt="mail_chimp" />
-                        <span>Mail Chimp</span>
-                      </Link>
-                    </Col>
-                    <Col>
-                      <Link className="dropdown-icon-item" to="#">
-                        <img src={slack} alt="slack" />
-                        <span>Slack</span>
-                      </Link>
-                    </Col>
-                  </Row>
-                </div>
-              </DropdownMenu>
-            </Dropdown> */}
+            
+            <SurveyModal open={modal_mdotoggle} closeModal={() => mdo_modal()}></SurveyModal>
 
-            <Dropdown className="d-none d-lg-inline-block ms-1">
-              <button
-                type="button"
-                onClick={() => {
-                  toggleFullscreen();
-                }}
-                className="btn header-item noti-icon waves-effect"
-                data-toggle="fullscreen"
-              >
-                <i className="uil-minus-path"></i>
-              </button>
-            </Dropdown>
-
-            <NotificationDropdown />
+            {/* <NotificationDropdown /> */}
 
             <ProfileMenu />
 
@@ -256,7 +192,7 @@ Header.propTypes = {
   showRightSidebar: PropTypes.any,
   showRightSidebarAction: PropTypes.func,
   t: PropTypes.any,
-  toggleLeftmenu: PropTypes.func
+  toggleLeftmenu: PropTypes.func,
 };
 
 const mapStatetoProps = state => {
@@ -266,6 +202,8 @@ const mapStatetoProps = state => {
     leftMenu,
     leftSideBarType,
   } = state.Layout;
+
+
   return { layoutType, showRightSidebar, leftMenu, leftSideBarType };
 };
 

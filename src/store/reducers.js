@@ -24,6 +24,9 @@ import invoices from "./invoices/reducer"
 //contacts
 import contacts from "./contacts/reducer"
 
+//survey
+import surveys from './survey/reducer';
+
 const rootReducer = combineReducers({
   // public
   Layout,
@@ -36,6 +39,7 @@ const rootReducer = combineReducers({
   ecommerce,
   invoices,
   contacts,
+  surveys
 })
 
 export default rootReducer

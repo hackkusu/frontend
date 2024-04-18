@@ -20,3 +20,6 @@ export * from "./invoices/actions"
 
 // contacts
 export * from "./contacts/actions"
+
+// surveys
+export * from "./survey/actions"

@@ -1,0 +1,63 @@
+version: 2.1
+orbs:
+  node: circleci/node@5.0.2
+
+jobs:
+  build_and_test:
+    executor: node/default
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: npm
+      - run:
+          command: npm run build-prod
+          name: Build app
+      - persist_to_workspace:
+          root: ~/project
+          paths:
+            - .
+
+  deploy: # this can be any name you choose
+    executor: node/default
+    steps:
+      - attach_workspace:
+          at: ~/project
+      - run: sudo apt-get update
+      - run: sudo apt-get -y -qq install awscli
+      # - run: ./deploy/prepare-feature-branch.sh
+      - run: AWS_ACCESS_KEY_ID=$S3_ID_2 AWS_SECRET_ACCESS_KEY=$S3_SECRET_2 AWS_DEFAULT_REGION=us-west-2 aws s3 sync --acl public-read ./dist/minia/ s3://cloudblitz.io/
+      - run: aws configure set preview.cloudfront true
+      - run: AWS_ACCESS_KEY_ID=$S3_ID_2 AWS_SECRET_ACCESS_KEY=$S3_SECRET_2 AWS_DEFAULT_REGION=us-west-2 aws cloudfront create-invalidation --distribution-id $DEV_CLOUDFRONT_ID_2 --paths '/*' || true
+      # - heroku/deploy-via-git:
+      #     force: true # force push when pushing to the heroku remote, see: https://devcenter.heroku.com/articles/git
+
+  deploy-feat: # this can be any name you choose
+    executor: node/default
+    steps:
+      - attach_workspace:
+          at: ~/project
+      - run: sudo apt-get update
+      - run: sudo apt-get -y -qq install awscli
+      # - run: ./deploy/prepare-feature-branch.sh
+      - run: AWS_ACCESS_KEY_ID=$S3_ID_2 AWS_SECRET_ACCESS_KEY=$S3_SECRET_2 AWS_DEFAULT_REGION=us-west-2 aws s3 sync --acl public-read ./dist/minia/ s3://cloudblitz.io/${CIRCLE_BRANCH}/
+      - run: aws configure set preview.cloudfront true
+      - run: AWS_ACCESS_KEY_ID=$S3_ID_2 AWS_SECRET_ACCESS_KEY=$S3_SECRET_2 AWS_DEFAULT_REGION=us-west-2 aws cloudfront create-invalidation --distribution-id $DEV_CLOUDFRONT_ID_2 --paths '/*' || true
+      # - heroku/deploy-via-git:
+      #     force: true # force push when pushing to the heroku remote, see: https://devcenter.heroku.com/articles/git
+
+workflows:
+  test_my_app:
+    jobs:
+      - build_and_test
+      - deploy-feat:
+          requires:
+            - build_and_test # only deploy if the build_and_test job has completed
+          filters:
+            branches:
+              ignore: ["main"] # only deploy when on main
+      - deploy:
+          requires:
+            - build_and_test # only deploy if the build_and_test job has completed
+          filters:
+            branches:
+              only: main # only deploy when on main

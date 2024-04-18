@@ -33,6 +33,7 @@ import { withTranslation } from "react-i18next";
 const Header = props => {
   const [isSearch, setSearch] = useState(false);
   const [socialDrp, setsocialDrp] = useState(false);
+  
 
   function toggleFullscreen() {
     if (
@@ -222,7 +223,7 @@ const Header = props => {
             </button>
           </div>
 
-          <NotificationDropdown />
+          {/* <NotificationDropdown /> */}
 
           <ProfileMenu />
 

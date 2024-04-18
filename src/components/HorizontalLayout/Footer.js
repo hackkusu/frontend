@@ -9,9 +9,10 @@ const Footer = () => {
           <Row>
             <Col md={6}>{new Date().getFullYear()} © HackUSU.</Col>
             <Col md={6}>
-              <div className="text-sm-right d-none d-sm-block">
+              <a href="http://minible-v-dark.react.themesbrand.com/dashboard">more</a>
+              {/* <div className="text-sm-right d-none d-sm-block">
                 Design & Develop by Themesbrand
-              </div>
+              </div> */}
             </Col>
           </Row>
         </Container>

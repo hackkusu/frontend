@@ -5,25 +5,25 @@ import * as url from "./url_helper";
 
 
 // get surveys
-export const getSurveys = () => get('http://localhost:8000/api/v1/surveys/');
+export const getSurveys = () => get('/api/v1/surveys/');
 
 // get phones
-export const getPhones = () => get('http://localhost:8000/api/v1/phones/');
+export const getPhones = () => get('/api/v1/phones/');
 
 // add surveys
 export const addNewSurvey = (survey) =>
-post('http://localhost:8000/api/v1/surveys/', survey);
+post('/api/v1/surveys/', survey);
 
 //update surveys
-export const updateSurvey = (survey) => put(`http://localhost:8000/api/v1/surveys/${survey.id}/`, survey);
+export const updateSurvey = (survey) => put(`/api/v1/surveys/${survey.id}/`, survey);
 
 //delete survey
 export const deleteSurvey = (survey) =>
-del(`http://localhost:8000/api/v1/surveys/${survey.id}/`, {headers: {survey}})
+del(`/api/v1/surveys/${survey.id}/`, {headers: {survey}})
 
 // get survey details
 export const getSurveyDetail = (id) =>
-  get(`http://localhost:8000/api/v1/surveys/${id}/`);
+  get(`/api/v1/surveys/${id}/`);
 
 
 export {

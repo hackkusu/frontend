@@ -21,10 +21,12 @@ const Spinearea = () => {
       curve: 'smooth',
       width: 3,
     },
-    series: [{
+    series: [
+      {
       name: 'series1',
       data: [34, 40, 28, 52, 42, 109, 100]
-    }],
+    }
+  ],
     colors: ['#34c38f', '#f46a6b'],
     xaxis: {
       type: 'datetime',

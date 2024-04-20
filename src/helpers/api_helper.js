@@ -7,7 +7,7 @@ import { getLoggedInUser } from "./fakebackend_helper"
 const token = accessToken
 
 //apply base url for axios
-export const API_URL = "https://hackusu-backend-ea481c29b26f.herokuapp.com"
+export const API_URL = "http://localhost:8000"
 
 const axiosApi = axios.create({
   baseURL: API_URL,

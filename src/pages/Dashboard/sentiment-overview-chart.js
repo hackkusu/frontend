@@ -1,28 +1,37 @@
-import React from "react"
-import { Card, CardBody, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem, Row, Col, Progress } from "reactstrap"
+import React, { useEffect, useState } from "react";
+import { Card, CardBody, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem, Row, Col, Progress } from "reactstrap";
+import { get } from "../../helpers/api_helper";
+import Pusher from 'pusher-js';
 
-const TopProduct = () => {
+const SentimentOverviewChart = () => {
+    const [progressbars, setProgressbars] = useState([]);
 
-    const progressbars = [
-        {
-            id: 3,
-            title: 'Positive',
-            value: 48,
-            color: 'success'
-        },
-        {
-            id: 4,
-            title: 'Nuetral',
-            value: 78,
-            color: 'warning'
-        },
-        {
-            id: 5,
-            title: 'Negative',
-            value: 63,
-            color: 'danger'
-        },
-    ]
+    useEffect(() => {
+        const fetchInitialData = () => {
+            get('/api/get_sentiment_overview')
+                .then(data => setProgressbars(data.progressbars))
+                .catch(error => console.error('Error fetching sentiment data:', error));
+        };
+
+        // Initialize data fetching on mount
+        fetchInitialData();
+
+        // Set up Pusher for real-time updates
+        const pusher = new Pusher('1bbaecb26111a9ad219d', {
+            cluster: 'us3',
+            encrypted: true
+        });
+
+        const channel = pusher.subscribe('survey-response-channel');
+        channel.bind('new-response', (data) => {
+            // Re-fetch the data or you could directly manipulate the state depending on the data structure returned
+            fetchInitialData();
+        });
+
+        return () => {
+            pusher.unsubscribe('survey-response-channel');
+        };
+    }, []);
 
     return (
         <React.Fragment>
@@ -45,7 +54,7 @@ const TopProduct = () => {
                     {progressbars.map((progressbar, key) => (
                         <Row className="align-items-center g-0 mt-3" key={key}>
                             <Col sm={3}>
-                                <p className="text-truncate mt-1 mb-0"><i className="mdi mdi-circle-medium text-warning me-2"></i> {progressbar.title} </p>
+                                <p className="text-truncate mt-1 mb-0"><i className={`mdi mdi-circle-medium text-${progressbar.color} me-2`}></i> {progressbar.title} </p>
                             </Col>
                             <Col sm={9}>
                                 <div className="mt-1" style={{ height: "6px" }}>
@@ -65,4 +74,4 @@ const TopProduct = () => {
     )
 }
 
-export default TopProduct
+export default SentimentOverviewChart;

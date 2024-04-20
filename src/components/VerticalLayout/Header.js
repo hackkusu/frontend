@@ -50,6 +50,32 @@ const Header = props => {
   const [modal_mdo, setmodal_mdo] = useState("@mdo");
   const [modal_mdotoggle, setmodal_mdotoggle] = useState(false);
 
+  function toggleFullscreen() {
+    if (
+      !document.fullscreenElement &&
+      /* alternative standard method */ !document.mozFullScreenElement &&
+      !document.webkitFullscreenElement
+    ) {
+      // current working methods
+      if (document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen();
+      } else if (document.documentElement.mozRequestFullScreen) {
+        document.documentElement.mozRequestFullScreen();
+      } else if (document.documentElement.webkitRequestFullscreen) {
+        document.documentElement.webkitRequestFullscreen(
+          Element.ALLOW_KEYBOARD_INPUT
+        );
+      }
+    } else {
+      if (document.cancelFullScreen) {
+        document.cancelFullScreen();
+      } else if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
+      } else if (document.webkitCancelFullScreen) {
+        document.webkitCancelFullScreen();
+      }
+    }
+  }
 
   function tToggle() {
     var body = document.body;

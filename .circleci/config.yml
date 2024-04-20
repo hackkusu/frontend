@@ -8,9 +8,9 @@ jobs:
     steps:
       - checkout
       - node/install-packages:
-          pkg-manager: npm
+          pkg-manager: yarn
       - run:
-          command: npm run build-prod
+          command: npm run build
           name: Build app
       - persist_to_workspace:
           root: ~/project
@@ -25,7 +25,7 @@ jobs:
       - run: sudo apt-get update
       - run: sudo apt-get -y -qq install awscli
       # - run: ./deploy/prepare-feature-branch.sh
-      - run: AWS_ACCESS_KEY_ID=$S3_ID_2 AWS_SECRET_ACCESS_KEY=$S3_SECRET_2 AWS_DEFAULT_REGION=us-west-2 aws s3 sync --acl public-read ./dist/minia/ s3://cloudblitz.io/
+      - run: AWS_ACCESS_KEY_ID=$S3_ID_2 AWS_SECRET_ACCESS_KEY=$S3_SECRET_2 AWS_DEFAULT_REGION=us-west-2 aws s3 sync --acl public-read ./build/ s3://data5570/
       - run: aws configure set preview.cloudfront true
       - run: AWS_ACCESS_KEY_ID=$S3_ID_2 AWS_SECRET_ACCESS_KEY=$S3_SECRET_2 AWS_DEFAULT_REGION=us-west-2 aws cloudfront create-invalidation --distribution-id $DEV_CLOUDFRONT_ID_2 --paths '/*' || true
       # - heroku/deploy-via-git:
@@ -39,7 +39,7 @@ jobs:
       - run: sudo apt-get update
       - run: sudo apt-get -y -qq install awscli
       # - run: ./deploy/prepare-feature-branch.sh
-      - run: AWS_ACCESS_KEY_ID=$S3_ID_2 AWS_SECRET_ACCESS_KEY=$S3_SECRET_2 AWS_DEFAULT_REGION=us-west-2 aws s3 sync --acl public-read ./dist/minia/ s3://cloudblitz.io/${CIRCLE_BRANCH}/
+      - run: AWS_ACCESS_KEY_ID=$S3_ID_2 AWS_SECRET_ACCESS_KEY=$S3_SECRET_2 AWS_DEFAULT_REGION=us-west-2 aws s3 sync --acl public-read ./build/ s3://data5570/${CIRCLE_BRANCH}/
       - run: aws configure set preview.cloudfront true
       - run: AWS_ACCESS_KEY_ID=$S3_ID_2 AWS_SECRET_ACCESS_KEY=$S3_SECRET_2 AWS_DEFAULT_REGION=us-west-2 aws cloudfront create-invalidation --distribution-id $DEV_CLOUDFRONT_ID_2 --paths '/*' || true
       # - heroku/deploy-via-git:

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { del, get, post, put } from "./api_helper";
+import { del, get, post, put, API_URL } from "./api_helper";
 import * as url from "./url_helper";
 
 // Gets the logged in user data from local session
@@ -20,10 +20,10 @@ const postFakeRegister = (data) => post(url.POST_FAKE_REGISTER, data);
 // Login Method
 const postFakeLogin = (data) => { 
   debugger; 
-  return axios.post('http://localhost:8000/api/auth/login/', data)
+  return axios.post(API_URL + '/api/auth/login/', data)
   .then((tokenResult) => {
     debugger;
-    return axios.get('http://localhost:8000/api/auth/user/', { headers: {
+    return axios.get(API_URL + '/api/auth/user/', { headers: {
     'Authorization': 'token ' + tokenResult?.data?.key
   }}).then((userResult) => Promise.resolve({
     ...userResult.data,

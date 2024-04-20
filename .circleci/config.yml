@@ -10,7 +10,7 @@ jobs:
       - node/install-packages:
           pkg-manager: yarn
       - run:
-          command: npm run build
+          command: CI=false yarn build
           name: Build app
       - persist_to_workspace:
           root: ~/project

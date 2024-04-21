@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Formik, Form, Field, FieldArray, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 
@@ -9,22 +9,38 @@ import {
 } from "reactstrap";
 import classnames from "classnames";
 import { Link } from "react-router-dom";
-
+import { API_URL } from '../../helpers/api_helper';
 // Import Breadcrumb (assumed to be already implemented)
 import Breadcrumbs from "../../components/Common/Breadcrumb";
 
-const FormWizard = () => {
-    document.title = "Form Wizard | HackUSU - Responsive Bootstrap 5 Admin Dashboard";
+import { useSelector, useDispatch } from "react-redux";
+import { createSelector } from "reselect";
+
+
+// actions
+import { getSurveyDetail, addNewSurvey, getSurveys, updateSurvey, getPhones } from "../../store/actions"
+
+import { withTranslation } from "react-i18next";
+import { connect } from "react-redux";
+
+const FormWizard = (props) => {
     const [activeTab, setActiveTab] = useState(1);
+    const dispatch = useDispatch();
 
     // Setup initial form state
-    const initialValues = {
+    const initialValues = { ...{
         surveyName: '',
         startCode: '',
         phoneNumber: '',
         description: '',
         prompts: [{ prompt: "" }]
-    };
+    }, ...props.surveyDetail};
+
+    const dynamicOptions = [
+        { value: '1', label: 'Large select' },
+        { value: '2', label: 'Small select' },
+        // ... other options
+    ];
 
     // Form validation schema
     const validationSchema = Yup.object({
@@ -38,6 +54,44 @@ const FormWizard = () => {
             })
         )
     });
+
+    useEffect(() => {
+        dispatch(getPhones());
+        dispatch(getSurveyDetail(2));
+      }, []);
+
+      useEffect(() => {
+        // // Fetch data function
+        // const fetchData = () => {
+        //     get('/api/get_highlight_responses')
+        //         .then(data => setHighlightResponses(data))
+        //         .catch(error => console.error('Error fetching highlight responses:', error));
+        // };
+
+        // // Initial fetch
+        // fetchData();
+
+        // // Pusher Configuration
+        // const pusher = new Pusher('1bbaecb26111a9ad219d', {
+        //     cluster: 'us3',
+        //     encrypted: true
+        // });
+
+        // // Subscribe to the channel
+        // const channel = pusher.subscribe('survey-response-channel');
+
+        // // Bind to the update event
+        // channel.bind('new-response', () => {
+        //     fetchData(); // Fetch updated data when new data is available
+        // });
+
+        // // Cleanup
+        // return () => {
+        //     channel.unbind_all();
+        //     channel.unsubscribe();
+        // };
+    }, []);
+    
 
     const onSubmit = values => {
         console.log(values);
@@ -92,22 +146,25 @@ const FormWizard = () => {
                             <Col lg="4">
                                 <FormGroup>
                                     <Label for="phoneNumber">Phone</Label>
-                                    {/* <select
-                                  name="phone_id"
-                                  onChange={formikProps.handleChange}
-                                  onBlur={formikProps.handleBlur}
-                                  value={formikProps.values.phoneNumber}
-                                  className="form-control"
-                                >
-                                  <option value="">Select Phone</option>
-                                  <option value="+14352131896">14352131896</option>
-           
-                                </select> */}
-                                    {/* {dynamicOptions.map(option => (
-                                    <option key={option.value} value={option.value}>
-                                      {option.label}
-                                    </option>
-                                  ))} */}
+                                    <select
+                                        name="phoneNumber"
+                                        onChange={formikProps.handleChange}
+                                        onBlur={formikProps.handleBlur}
+                                        value={formikProps.values.phoneNumber}
+                                        placeholder=""
+                                        className="form-control"
+                                    >
+                                        <option value="">Select Phone</option>
+                                        <option value="+14352131896">14352131896</option>
+
+                                        {dynamicOptions.map(option => (
+                                            <option key={option.value} value={option.value}>
+                                                {option.label}
+                                            </option>
+                                        ))}
+                                    </select>
+
+                                    {/* 
                                     <Input
                                         id="phoneNumber"
                                         name="phoneNumber"
@@ -116,7 +173,7 @@ const FormWizard = () => {
                                         onChange={formikProps.handleChange}
                                         onBlur={formikProps.handleBlur}
                                         value={formikProps.values.phoneNumber}
-                                    />
+                                    /> */}
                                     <ErrorMessage name="phoneNumber" component="div" className="text-danger" />
                                 </FormGroup>
                             </Col>
@@ -255,7 +312,7 @@ const FormWizard = () => {
                 return (
                     <TabPane tabId={3}>
                         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '400px' }}>
-                            <img src="http://localhost:8000/api/generate_qr_code?phone_number=4352131896&start_code=hello" alt="QR Code" />
+                            <img src={API_URL + "/api/generate_qr_code?phone_number=4352131896&start_code=hello"} alt="QR Code" />
                         </div>
 
                         <Row>
@@ -409,4 +466,22 @@ const FormWizard = () => {
     );
 };
 
-export default FormWizard;
+
+
+const mapStatetoProps = state => {
+
+    const {
+      surveys,
+      surveyDetail,
+      phones,
+      error
+    } = state.surveys;
+  
+    return { surveys, phones, surveyDetail, error };
+  };
+  
+  export default connect(mapStatetoProps, {
+    // getSurveys,
+    // getSurveyDetail,
+    // addNewSurvey,
+  })(withTranslation()(FormWizard));

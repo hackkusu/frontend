@@ -43,7 +43,7 @@ const Dashboard = () => {
           </Row>
 
           <Row>
-            {/* <MainSelectForm /> */}
+            <MainSelectForm />
 
             <Col xl={12}>
               <ResponsesOverTimeChart />
@@ -78,10 +78,10 @@ const Dashboard = () => {
               <HighlightResponses />
             </Col>
 
-            <Col xl={12}>
-              {/* <SurveyForm /> */}
+            {/* <Col xl={12}>
+              <SurveyForm />
               <FormWizard />
-            </Col>
+            </Col> */}
             <Col xl={12}>
               {/* <SurveyForm /> */}
               <SurveyFormWizard />

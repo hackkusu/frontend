@@ -40,7 +40,8 @@ const SentimentOverviewChart = () => {
                     <div className="float-end">
                         <UncontrolledDropdown>
                             <DropdownToggle tag="a" className="text-reset" id="dropdownMenuButton5" caret href="#">
-                                <span className="fw-semibold">Sort By:</span> <span className="text-muted">Yearly<i className="mdi mdi-chevron-down ms-1"></i></span>
+                                {/* <span className="fw-semibold">Sort By:</span>  */}
+                                <span className="text-muted">Yearly<i className="mdi mdi-chevron-down ms-1"></i></span>
                             </DropdownToggle>
                             <DropdownMenu className="dropdown-menu-end">
                                 <DropdownItem href="#">Monthly</DropdownItem>

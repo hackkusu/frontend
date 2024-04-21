@@ -24,17 +24,21 @@ import { withTranslation } from "react-i18next";
 import { connect } from "react-redux";
 
 const FormWizard = (props) => {
+    const [textareabadge, settextareabadge] = useState(0)
+    const [textcount, settextcount] = useState(0)
     const [activeTab, setActiveTab] = useState(1);
     const dispatch = useDispatch();
 
     // Setup initial form state
-    const initialValues = { ...{
-        surveyName: '',
-        startCode: '',
-        phoneNumber: '',
-        description: '',
-        prompts: [{ prompt: "" }]
-    }, ...props.surveyDetail};
+    const initialValues = {
+        ...{
+            surveyName: '',
+            startCode: '',
+            phoneNumber: '',
+            description: '',
+            prompts: [{ prompt: "" }]
+        }, ...props.surveyDetail
+    };
 
     const dynamicOptions = [
         { value: '1', label: 'Large select' },
@@ -58,9 +62,9 @@ const FormWizard = (props) => {
     useEffect(() => {
         dispatch(getPhones());
         dispatch(getSurveyDetail(2));
-      }, []);
+    }, []);
 
-      useEffect(() => {
+    useEffect(() => {
         // // Fetch data function
         // const fetchData = () => {
         //     get('/api/get_highlight_responses')
@@ -91,7 +95,7 @@ const FormWizard = (props) => {
         //     channel.unsubscribe();
         // };
     }, []);
-    
+
 
     const onSubmit = values => {
         console.log(values);
@@ -105,6 +109,16 @@ const FormWizard = (props) => {
     const removePrompt = (remove, index) => {
         remove(index);
     };
+
+    function textareachange(event) {
+        const count = event.target.value.length
+        if (count > 0) {
+            settextareabadge(true)
+        } else {
+            settextareabadge(false)
+        }
+        settextcount(event.target.value.length)
+    }
 
     // Render Tab Pane Content
     const renderTabPane = (formikProps, arrayHelpers) => {
@@ -248,11 +262,21 @@ const FormWizard = (props) => {
                                                         <Input
                                                             name={`prompts[${index}].prompt`}
                                                             type="textarea"
-                                                            onChange={formikProps.handleChange}
+                                                            maxLength={160}
+                                                            onChange={(args) => {
+                                                                textareachange(args)
+                                                                formikProps.handleChange(args)
+                                                            }}
                                                             onBlur={formikProps.handleBlur}
                                                             value={prompt.prompt}
                                                             rows="5"
                                                         />
+                                                        {textareabadge ? (
+                                                            <span className="badgecount badge bg-success" style={{ float: "right" }}>
+                                                                {" "}
+                                                                {textcount} / 160{" "}
+                                                            </span>
+                                                        ) : null}
                                                         <ErrorMessage name={`prompts[${index}].prompt`} component="div" className="text-danger" />
                                                     </FormGroup>
                                                 </Col>
@@ -471,17 +495,17 @@ const FormWizard = (props) => {
 const mapStatetoProps = state => {
 
     const {
-      surveys,
-      surveyDetail,
-      phones,
-      error
+        surveys,
+        surveyDetail,
+        phones,
+        error
     } = state.surveys;
-  
+
     return { surveys, phones, surveyDetail, error };
-  };
-  
-  export default connect(mapStatetoProps, {
+};
+
+export default connect(mapStatetoProps, {
     // getSurveys,
     // getSurveyDetail,
     // addNewSurvey,
-  })(withTranslation()(FormWizard));
+})(withTranslation()(FormWizard));

@@ -312,8 +312,8 @@ const FormWizard = (props) => {
                         </FieldArray>
 
                         <Row>
-                            <Col lg="10"></Col>
-                            <Col lg="1">
+                            <Col xl="10" lg="8" xs="6" md="6" sm="6"></Col>
+                            <Col xl="1" lg="2" xs="3" md="3" sm="3">
                                 <div className="d-grid">
                                     <input
                                         type="button"
@@ -325,7 +325,7 @@ const FormWizard = (props) => {
                                     />
                                 </div>
                             </Col>
-                            <Col lg="1">
+                            <Col xl="1" lg="2" xs="3" md="3" sm="3">
                                 <div className="d-grid">
                                     <input
                                         type="button"
@@ -348,8 +348,8 @@ const FormWizard = (props) => {
                         </div>
 
                         <Row>
-                            <Col lg="10"></Col>
-                            <Col lg="1">
+                            <Col xl="10" lg="8" xs="6" md="6" sm="6"></Col>
+                            <Col xl="1" lg="2" xs="3" md="3" sm="3">
                                 <div className="d-grid">
                                     <input
                                         type="button"
@@ -361,7 +361,7 @@ const FormWizard = (props) => {
                                     />
                                 </div>
                             </Col>
-                            <Col lg="1">
+                            <Col xl="1" lg="2" xs="3" md="3" sm="3">
                                 <div className="d-grid">
                                     <input
                                         type="button"

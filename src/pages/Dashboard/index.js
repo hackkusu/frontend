@@ -20,12 +20,16 @@ import setupanalytics from "../../assets/images/setup-analytics-amico.svg";
 import PieChart from "../AllCharts/apex/PieChart"
 
 import SplineArea from "../AllCharts/apex/SplineArea"
+import SurveyForm from "./SurveyForm";
+import FormWizard from "../Forms/FormWizard";
+import SurveyFormWizard from "./SurveyFormWizard";
+import MainSelectForm from "./SelectForm";
 
 
 
 const Dashboard = () => {
 
-  document.title=" Dashboard | HackUSU"
+  document.title = " Dashboard | HackUSU"
 
 
   return (
@@ -39,6 +43,8 @@ const Dashboard = () => {
           </Row>
 
           <Row>
+            {/* <MainSelectForm /> */}
+
             <Col xl={12}>
               <ResponsesOverTimeChart />
             </Col>
@@ -60,7 +66,7 @@ const Dashboard = () => {
                   
                 </CardBody>
               </Card> */}
-              
+
               <SentimentOverviewChart />
             </Col>
           </Row>
@@ -70,6 +76,15 @@ const Dashboard = () => {
             </Col> */}
             <Col xl={12}>
               <HighlightResponses />
+            </Col>
+
+            <Col xl={12}>
+              {/* <SurveyForm /> */}
+              <FormWizard />
+            </Col>
+            <Col xl={12}>
+              {/* <SurveyForm /> */}
+              <SurveyFormWizard />
             </Col>
             {/* <Col xl={4}>
               <SocialSource />

@@ -58,35 +58,41 @@ const FormWizard = () => {
             case 1:
                 return (
                     <TabPane tabId={1}>
-                        <FormGroup>
-                            <Label for="surveyName">Survey Name</Label>
-                            <Input
-                                id="surveyName"
-                                name="surveyName"
-                                type="text"
-                                placeholder="Enter your survey name"
-                                onChange={formikProps.handleChange}
-                                onBlur={formikProps.handleBlur}
-                                value={formikProps.values.surveyName}
-                            />
-                            <ErrorMessage name="surveyName" component="div" className="text-danger" />
-                        </FormGroup>
-                        <FormGroup>
-                            <Label for="startCode">Start Code</Label>
-                            <Input
-                                id="startCode"
-                                name="startCode"
-                                type="text"
-                                placeholder="Enter your survey start code"
-                                onChange={formikProps.handleChange}
-                                onBlur={formikProps.handleBlur}
-                                value={formikProps.values.startCode}
-                            />
-                            <ErrorMessage name="startCode" component="div" className="text-danger" />
-                        </FormGroup>
-                        <FormGroup>
-                            <Label for="phoneNumber">Phone</Label>
-                            {/* <select
+                        <Row>
+                            <Col lg="4">
+                                <FormGroup>
+                                    <Label for="surveyName">Survey Name</Label>
+                                    <Input
+                                        id="surveyName"
+                                        name="surveyName"
+                                        type="text"
+                                        placeholder="Enter your survey name"
+                                        onChange={formikProps.handleChange}
+                                        onBlur={formikProps.handleBlur}
+                                        value={formikProps.values.surveyName}
+                                    />
+                                    <ErrorMessage name="surveyName" component="div" className="text-danger" />
+                                </FormGroup>
+                            </Col>
+                            <Col lg="4">
+                                <FormGroup>
+                                    <Label for="startCode">Start Code</Label>
+                                    <Input
+                                        id="startCode"
+                                        name="startCode"
+                                        type="text"
+                                        placeholder="Enter your survey start code"
+                                        onChange={formikProps.handleChange}
+                                        onBlur={formikProps.handleBlur}
+                                        value={formikProps.values.startCode}
+                                    />
+                                    <ErrorMessage name="startCode" component="div" className="text-danger" />
+                                </FormGroup>
+                            </Col>
+                            <Col lg="4">
+                                <FormGroup>
+                                    <Label for="phoneNumber">Phone</Label>
+                                    {/* <select
                                   name="phone_id"
                                   onChange={formikProps.handleChange}
                                   onBlur={formikProps.handleBlur}
@@ -97,54 +103,72 @@ const FormWizard = () => {
                                   <option value="+14352131896">14352131896</option>
            
                                 </select> */}
-                                                       {/* {dynamicOptions.map(option => (
+                                    {/* {dynamicOptions.map(option => (
                                     <option key={option.value} value={option.value}>
                                       {option.label}
                                     </option>
                                   ))} */}
-                            <Input
-                                id="phoneNumber"
-                                name="phoneNumber"
-                                type="text"
-                                onChange={formikProps.handleChange}
-                                onBlur={formikProps.handleBlur}
-                                value={formikProps.values.phoneNumber}
-                            />
-                            <ErrorMessage name="phoneNumber" component="div" className="text-danger" />
-                        </FormGroup>
-                        <FormGroup>
-                            <Label for="description">Description</Label>
-                            <Input
-                                id="description"
-                                name="description"
-                                type="textarea"
-                                placeholder="Enter your survey description"
-                                onChange={formikProps.handleChange}
-                                onBlur={formikProps.handleBlur}
-                                value={formikProps.values.description}
-                            />
-                            <ErrorMessage name="description" component="div" className="text-danger" />
-                        </FormGroup>
+                                    <Input
+                                        id="phoneNumber"
+                                        name="phoneNumber"
+                                        type="text"
+                                        placeholder="Enter your survey phone number"
+                                        onChange={formikProps.handleChange}
+                                        onBlur={formikProps.handleBlur}
+                                        value={formikProps.values.phoneNumber}
+                                    />
+                                    <ErrorMessage name="phoneNumber" component="div" className="text-danger" />
+                                </FormGroup>
+                            </Col>
+                        </Row>
 
-                        {/* <React.Fragment>
-                            <Button
+                        <Row>
+                            <Col lg="12">
+                                <FormGroup>
+                                    <Label for="description">Description</Label>
+                                    <Input
+                                        id="description"
+                                        name="description"
+                                        type="textarea"
+                                        placeholder="Enter your survey description"
+                                        onChange={formikProps.handleChange}
+                                        onBlur={formikProps.handleBlur}
+                                        value={formikProps.values.description}
+                                    />
+                                    <ErrorMessage name="description" component="div" className="text-danger" />
+                                </FormGroup>
+                            </Col>
+                        </Row>
+
+                        <React.Fragment>
+                            {/* <Button
                                 to="#"
                                 onClick={() => {
                                     setActiveTab(activeTab - 1)
                                 }}
                             >
                                 Previous
-                            </Button>
+                            </Button> */}
 
-                            <Button
-                                to="#"
-                                onClick={() => {
-                                    setActiveTab(activeTab + 1)
-                                }}
-                            >
-                                Next
-                            </Button>
-                        </React.Fragment> */}
+                            <Row>
+                                <Col lg="10"></Col>
+                                <Col lg="1">
+
+                                </Col>
+                                <Col lg="1">
+                                    <div className="d-grid">
+                                        <input
+                                            type="button"
+                                            className="btn btn-primary"
+                                            value="Next"
+                                            onClick={() => {
+                                                setActiveTab(activeTab + 1)
+                                            }}
+                                        />
+                                    </div>
+                                </Col>
+                            </Row>
+                        </React.Fragment>
 
                     </TabPane>
                 );
@@ -166,26 +190,65 @@ const FormWizard = () => {
                                                         <Label>Prompt {index + 1}</Label>
                                                         <Input
                                                             name={`prompts[${index}].prompt`}
-                                                            type="text"
+                                                            type="textarea"
                                                             onChange={formikProps.handleChange}
                                                             onBlur={formikProps.handleBlur}
                                                             value={prompt.prompt}
+                                                            rows="5"
                                                         />
                                                         <ErrorMessage name={`prompts[${index}].prompt`} component="div" className="text-danger" />
                                                     </FormGroup>
                                                 </Col>
-                                                <Col lg={2}>
-                                                    <Button color="danger" onClick={() => removePrompt(remove, index)}>Remove</Button>
+                                                <Col lg={2} className="align-self-center">
+                                                    <div className="d-grid">
+                                                        <input
+                                                            type="button"
+                                                            className="btn btn-primary"
+                                                            value="Remove"
+                                                            onClick={() => removePrompt(remove, index)}
+                                                        />
+                                                    </div>
                                                 </Col>
+                                                {/* <Col lg={2}>
+                                                    <Button color="danger" onClick={() => removePrompt(remove, index)}>Remove</Button>
+                                                </Col> */}
                                             </Row>
 
                                         ))}
 
 
-                                    <Button color="success" onClick={() => addPrompt(push)}>Add Prompt</Button>
+                                    <Button color="success" onClick={() => addPrompt(push)}>Add</Button>
                                 </>
                             )}
                         </FieldArray>
+
+                        <Row>
+                            <Col lg="10"></Col>
+                            <Col lg="1">
+                                <div className="d-grid">
+                                    <input
+                                        type="button"
+                                        className="btn btn-primary"
+                                        value="Previous"
+                                        onClick={() => {
+                                            setActiveTab(activeTab - 1)
+                                        }}
+                                    />
+                                </div>
+                            </Col>
+                            <Col lg="1">
+                                <div className="d-grid">
+                                    <input
+                                        type="button"
+                                        className="btn btn-primary"
+                                        value="Next"
+                                        onClick={() => {
+                                            setActiveTab(activeTab + 1)
+                                        }}
+                                    />
+                                </div>
+                            </Col>
+                        </Row>
                     </TabPane>
                 );
             case 3:
@@ -194,6 +257,34 @@ const FormWizard = () => {
                         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '400px' }}>
                             <img src="http://localhost:8000/api/generate_qr_code?phone_number=4352131896&start_code=hello" alt="QR Code" />
                         </div>
+
+                        <Row>
+                            <Col lg="10"></Col>
+                            <Col lg="1">
+                                <div className="d-grid">
+                                    <input
+                                        type="button"
+                                        className="btn btn-primary"
+                                        value="Previous"
+                                        onClick={() => {
+                                            setActiveTab(activeTab - 1)
+                                        }}
+                                    />
+                                </div>
+                            </Col>
+                            <Col lg="1">
+                                <div className="d-grid">
+                                    <input
+                                        type="button"
+                                        className="btn btn-primary"
+                                        value="Next"
+                                        onClick={() => {
+                                            setActiveTab(activeTab + 1)
+                                        }}
+                                    />
+                                </div>
+                            </Col>
+                        </Row>
                     </TabPane>
                 );
             case 4:
@@ -207,10 +298,29 @@ const FormWizard = () => {
                                     </div>
                                     <h5>Confirm Detail</h5>
                                     <p className="text-muted">Your survey should be ready to go!</p>
-                                    <Button color="primary" type="submit">Submit Survey</Button> 
+                                    <Button color="primary" type="submit">Submit Survey</Button>
                                 </div>
                             </Col>
                         </div>
+
+                        {/* <Row>
+                                <Col lg="10"></Col>
+                                <Col lg="1">
+                                    <div className="d-grid">
+                                        <input
+                                            type="button"
+                                            className="btn btn-primary"
+                                            value="Previous"
+                                            onClick={() => {
+                                                setActiveTab(activeTab - 1)
+                                            }}
+                                        />
+                                    </div>
+                                </Col>
+                                <Col lg="1">
+
+                                </Col>
+                            </Row> */}
                     </TabPane>
                 );
             default:

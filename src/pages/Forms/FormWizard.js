@@ -388,6 +388,7 @@ const FormWizard = () => {
                     </TabPane>
                   </TabContent>
                 </div>
+
                 <div className="actions clearfix">
                   <ul>
                     <li
@@ -424,6 +425,8 @@ const FormWizard = () => {
                     </li>
                   </ul>
                 </div>
+
+                
               </div>
             </CardBody>
           </Card>

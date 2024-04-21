@@ -28,6 +28,7 @@ const FormWizard = (props) => {
     const [textcount, settextcount] = useState(0)
     const [activeTab, setActiveTab] = useState(1);
     const dispatch = useDispatch();
+    const [textareaCounts, setTextareaCounts] = useState({});
 
     // Setup initial form state
     const initialValues = {
@@ -108,16 +109,18 @@ const FormWizard = (props) => {
 
     const removePrompt = (remove, index) => {
         remove(index);
+        setTextareaCounts(prevCounts => ({
+            ...prevCounts,
+            [index]: 0
+        }));
     };
 
-    function textareachange(event) {
-        const count = event.target.value.length
-        if (count > 0) {
-            settextareabadge(true)
-        } else {
-            settextareabadge(false)
-        }
-        settextcount(event.target.value.length)
+    function textareachange(event, index) {
+        const count = event.target.value.length;
+        setTextareaCounts(prevCounts => ({
+            ...prevCounts,
+            [index]: count
+        }));
     }
 
     // Render Tab Pane Content
@@ -264,19 +267,24 @@ const FormWizard = (props) => {
                                                             type="textarea"
                                                             maxLength={160}
                                                             onChange={(args) => {
-                                                                textareachange(args)
+                                                                textareachange(args, index)
                                                                 formikProps.handleChange(args)
                                                             }}
                                                             onBlur={formikProps.handleBlur}
                                                             value={prompt.prompt}
                                                             rows="5"
                                                         />
-                                                        {textareabadge ? (
+                                                        {/* {textareabadge ? (
                                                             <span className="badgecount badge bg-success" style={{ float: "right" }}>
                                                                 {" "}
                                                                 {textcount} / 160{" "}
                                                             </span>
-                                                        ) : null}
+                                                        ) : null} */}
+                                                        {textareaCounts[index] > 0 && (
+                                                            <span className="badgecount badge bg-success" style={{ float: "right" }}>
+                                                                {textareaCounts[index]} / 160
+                                                            </span>
+                                                        )}
                                                         <ErrorMessage name={`prompts[${index}].prompt`} component="div" className="text-danger" />
                                                     </FormGroup>
                                                 </Col>

@@ -15,43 +15,42 @@ import Breadcrumbs from "../../components/Common/Breadcrumb";
 
 import { useSelector, useDispatch } from "react-redux";
 import { createSelector } from "reselect";
-
+import toastr from "toastr";
+import "toastr/build/toastr.min.css";
 
 // actions
-import { getSurveyDetail, addNewSurvey, getSurveys, updateSurvey, getPhones } from "../../store/actions"
+import { getSurveyDetail, addNewSurvey, getSurveys, updateSurvey, getSurveyQuestions, getPhones } from "../../store/actions"
 
 import { withTranslation } from "react-i18next";
 import { connect } from "react-redux";
 
-const FormWizard = (props) => {
+const FormWizard = (mainProps) => {
     const [textareabadge, settextareabadge] = useState(0)
     const [textcount, settextcount] = useState(0)
     const [activeTab, setActiveTab] = useState(1);
     const dispatch = useDispatch();
     const [textareaCounts, setTextareaCounts] = useState({});
+    const [shareData, setShareData] = useState({});
+    const [canProceed, setCanProceed] = useState(false);
 
     // Setup initial form state
     const initialValues = {
         ...{
-            surveyName: '',
-            startCode: '',
-            phoneNumber: '',
+            name: '',
+            start_code: '',
+            phone: '',
             description: '',
             prompts: [{ prompt: "" }]
-        }, ...props.surveyDetail
+        }, ...mainProps.surveyDetail
     };
 
-    const dynamicOptions = [
-        { value: '1', label: 'Large select' },
-        { value: '2', label: 'Small select' },
-        // ... other options
-    ];
+    const dynamicOptions = Object.values(mainProps.phones);
 
     // Form validation schema
     const validationSchema = Yup.object({
-        surveyName: Yup.string().required('Survey name is required'),
-        startCode: Yup.string().required('Start code is required'),
-        phoneNumber: Yup.string().required('Phone number is required'),
+        name: Yup.string().required('Survey name is required'),
+        start_code: Yup.string().required('Start code is required'),
+        phone: Yup.string().required('Phone number is required'),
         description: Yup.string().required('Description is required'),
         prompts: Yup.array().of(
             Yup.object().shape({
@@ -60,10 +59,64 @@ const FormWizard = (props) => {
         )
     });
 
+    function showErrorToast() {
+        toastr.options = {
+            positionClass: 'toast-bottom-right',
+            // timeOut: timeOut,
+            // extendedTimeOut: extendedTimeOut,
+            // closeButton: closeButton,
+            // debug: debug,
+            // progressBar: progressBar,
+            // preventDuplicates: preventDuplicates,
+            // newestOnTop: newestOnTop,
+            // showEasing: showEasing,
+            // hideEasing: hideEasing,
+            // showMethod: showMethod,
+            // hideMethod: hideMethod,
+            // showDuration: showDuration,
+            // hideDuration: hideDuration
+        };
+
+        // setTimeout(() => toastr.success(`Settings updated `), 300)
+        //Toaster Types
+        // if (toastType === "info") toastr.info(message, title);
+        // else if (toastType === "warning") toastr.warning(message, title);
+        // else if (toastType === "error") toastr.error(message, title);
+        // else toastr.success(message, title);
+        toastr.error(mainProps.error?.message, mainProps.error?.name)
+    }
+
+    function showSuccessToast() {
+        toastr.options = {
+            positionClass: 'toast-bottom-right',
+        };
+
+        toastr.success('Saved successfully.', 'Success!');
+    }
+
+    function clearToast() {
+        toastr.clear();
+    }
+
     useEffect(() => {
         dispatch(getPhones());
-        dispatch(getSurveyDetail(2));
+        // dispatch(getSurveyDetail(2));
     }, []);
+
+    useEffect(() => {
+        if (mainProps.error?.message) {
+            console.log('error', mainProps.error)
+            showErrorToast();
+        }
+    }, [mainProps.error])
+
+    useEffect(() => {
+        if (mainProps.success) {
+            console.log('success', mainProps.success)
+            showSuccessToast();
+            setCanProceed(true);
+        }
+    }, [mainProps.success])
 
     useEffect(() => {
         // // Fetch data function
@@ -100,7 +153,10 @@ const FormWizard = (props) => {
 
     const onSubmit = values => {
         console.log(values);
+        setShareData({ start_code: values.start_code, phone_number: Object.values(mainProps.phones).filter(phone => phone.id == values.phone).map(phone => phone.number)[0] });
         // API call to submit the final data
+        dispatch(addNewSurvey(values));
+        dispatch(getSurveys());
     };
 
     const addPrompt = (push) => {
@@ -108,11 +164,13 @@ const FormWizard = (props) => {
     };
 
     const removePrompt = (remove, index) => {
-        remove(index);
-        setTextareaCounts(prevCounts => ({
-            ...prevCounts,
-            [index]: 0
-        }));
+        if (index > 0) {
+            remove(index);
+            setTextareaCounts(prevCounts => ({
+                ...prevCounts,
+                [index]: 0
+            }));
+        }
     };
 
     function textareachange(event, index) {
@@ -132,66 +190,65 @@ const FormWizard = (props) => {
                         <Row>
                             <Col lg="4">
                                 <FormGroup>
-                                    <Label for="surveyName">Survey Name</Label>
+                                    <Label for="name">Survey Name</Label>
                                     <Input
-                                        id="surveyName"
-                                        name="surveyName"
+                                        id="name"
+                                        name="name"
                                         type="text"
                                         placeholder="Enter your survey name"
                                         onChange={formikProps.handleChange}
                                         onBlur={formikProps.handleBlur}
-                                        value={formikProps.values.surveyName}
+                                        value={formikProps.values.name}
                                     />
-                                    <ErrorMessage name="surveyName" component="div" className="text-danger" />
+                                    <ErrorMessage name="name" component="div" className="text-danger" />
                                 </FormGroup>
                             </Col>
                             <Col lg="4">
                                 <FormGroup>
-                                    <Label for="startCode">Start Code</Label>
+                                    <Label for="start_code">Start Code</Label>
                                     <Input
-                                        id="startCode"
-                                        name="startCode"
+                                        id="start_code"
+                                        name="start_code"
                                         type="text"
                                         placeholder="Enter your survey start code"
                                         onChange={formikProps.handleChange}
                                         onBlur={formikProps.handleBlur}
-                                        value={formikProps.values.startCode}
+                                        value={formikProps.values.start_code}
                                     />
-                                    <ErrorMessage name="startCode" component="div" className="text-danger" />
+                                    <ErrorMessage name="start_code" component="div" className="text-danger" />
                                 </FormGroup>
                             </Col>
                             <Col lg="4">
                                 <FormGroup>
-                                    <Label for="phoneNumber">Phone</Label>
+                                    <Label for="phone">Phone</Label>
                                     <select
-                                        name="phoneNumber"
+                                        name="phone"
                                         onChange={formikProps.handleChange}
                                         onBlur={formikProps.handleBlur}
-                                        value={formikProps.values.phoneNumber}
+                                        value={formikProps.values.phone}
                                         placeholder=""
                                         className="form-control"
                                     >
                                         <option value="">Select Phone</option>
-                                        <option value="+14352131896">14352131896</option>
 
                                         {dynamicOptions.map(option => (
-                                            <option key={option.value} value={option.value}>
-                                                {option.label}
+                                            <option key={option.id} value={option.id}>
+                                                {option.label}  {option.number}
                                             </option>
                                         ))}
                                     </select>
 
                                     {/* 
                                     <Input
-                                        id="phoneNumber"
-                                        name="phoneNumber"
+                                        id="phone"
+                                        name="phone"
                                         type="text"
                                         placeholder="Enter your survey phone number"
                                         onChange={formikProps.handleChange}
                                         onBlur={formikProps.handleBlur}
-                                        value={formikProps.values.phoneNumber}
+                                        value={formikProps.values.phone}
                                     /> */}
-                                    <ErrorMessage name="phoneNumber" component="div" className="text-danger" />
+                                    <ErrorMessage name="phone" component="div" className="text-danger" />
                                 </FormGroup>
                             </Col>
                         </Row>
@@ -343,9 +400,19 @@ const FormWizard = (props) => {
             case 3:
                 return (
                     <TabPane tabId={3}>
-                        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '400px' }}>
-                            <img src={API_URL + "/api/generate_qr_code?phone_number=4352131896&start_code=hello"} alt="QR Code" />
+                        <div className="row justify-content-center">
+                            <Col lg="6">
+                                <div className="text-center">
+                                    <div className="mb-4">
+                                        <i className="mdi mdi-check-circle-outline text-success display-4" />
+                                    </div>
+                                    <h5>Confirm Detail</h5>
+                                    <p className="text-muted">Your survey should be ready to go after you save it!</p>
+                                    <Button color="primary" type="submit">Submit Survey</Button>
+                                </div>
+                            </Col>
                         </div>
+
 
                         <Row>
                             <Col xl="10" lg="8" xs="6" md="6" sm="6"></Col>
@@ -365,7 +432,12 @@ const FormWizard = (props) => {
                                 <div className="d-grid">
                                     <input
                                         type="button"
-                                        className="btn btn-primary"
+                                        className={
+                                            classnames({
+                                                'btn': true,
+                                                'btn-primary': true,
+                                                'disabled': !canProceed
+                                            })}
                                         value="Next"
                                         onClick={() => {
                                             setActiveTab(activeTab + 1)
@@ -379,17 +451,8 @@ const FormWizard = (props) => {
             case 4:
                 return (
                     <TabPane tabId={4}>
-                        <div className="row justify-content-center">
-                            <Col lg="6">
-                                <div className="text-center">
-                                    <div className="mb-4">
-                                        <i className="mdi mdi-check-circle-outline text-success display-4" />
-                                    </div>
-                                    <h5>Confirm Detail</h5>
-                                    <p className="text-muted">Your survey should be ready to go!</p>
-                                    <Button color="primary" type="submit">Submit Survey</Button>
-                                </div>
-                            </Col>
+                        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '400px' }}>
+                            <img src={API_URL + `/api/generate_qr_code?phone_number=${shareData.phone_number}&start_code=${shareData.start_code}`} alt="QR Code" />
                         </div>
 
                         {/* <Row>
@@ -441,7 +504,7 @@ const FormWizard = (props) => {
                                                             className={classnames({ active: activeTab === 1 })}
                                                             onClick={() => { setActiveTab(1); }}
                                                         >
-                                                            <span className="number">1.</span> Survey Details
+                                                            <span className="number">1.</span> Survey
                                                         </NavLink>
                                                     </NavItem>
                                                     <NavItem
@@ -459,7 +522,7 @@ const FormWizard = (props) => {
                                                             className={classnames({ active: activeTab === 3 })}
                                                             onClick={() => { setActiveTab(3); }}
                                                         >
-                                                            <span className="number">3.</span> Share
+                                                            <span className="number">3.</span> Confirm Details
                                                         </NavLink>
                                                     </NavItem>
                                                     <NavItem
@@ -468,7 +531,7 @@ const FormWizard = (props) => {
                                                             className={classnames({ active: activeTab === 4 })}
                                                             onClick={() => { setActiveTab(4); }}
                                                         >
-                                                            <span className="number">4.</span> Confirm Detail
+                                                            <span className="number">4.</span> Share
                                                         </NavLink>
                                                     </NavItem>
                                                 </ul>
@@ -506,10 +569,11 @@ const mapStatetoProps = state => {
         surveys,
         surveyDetail,
         phones,
-        error
+        error,
+        success
     } = state.surveys;
 
-    return { surveys, phones, surveyDetail, error };
+    return { surveys, phones, surveyDetail, error, success };
 };
 
 export default connect(mapStatetoProps, {

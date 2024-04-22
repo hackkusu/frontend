@@ -4,6 +4,7 @@ import { call, put, takeEvery } from "redux-saga/effects"
 import { 
   GET_SURVEYS,
   GET_SURVEY_DETAIL,
+  GET_SURVEY_QUESTIONS,
   ADD_NEW_SURVEY,
   UPDATE_SURVEY,
   DELETE_SURVEY,
@@ -22,7 +23,9 @@ import {
   updateSurveySuccess,
   updateSurveyFail,
   deleteSurveySuccess,
-  deleteSurveyFail
+  deleteSurveyFail,
+  getSurveyQuestionsSuccess,
+  getSurveyQuestionsFail
 } from "./actions"
 
 //Include Both Helper File with needed methods
@@ -33,6 +36,7 @@ import {
   addNewSurvey,
   updateSurvey,
   deleteSurvey,
+  getSurveyQuestions
  } from "../../helpers/backend_helper"
 
 function* fetchSurveys() {
@@ -89,10 +93,20 @@ function* fetchSurveyDetail({ surveyId }) {
   }
 }
 
+function* fetchSurveyQuestions({ surveyId }) {
+  try {
+    const response = yield call(getSurveyQuestions, surveyId)
+    yield put(getSurveyQuestionsSuccess(response))
+  } catch (error) {
+    yield put(getSurveyQuestionsFail(error))
+  }
+}
+
 function* surveySaga() {
   yield takeEvery(GET_SURVEYS, fetchSurveys)
   yield takeEvery(GET_PHONES, fetchPhones)
   yield takeEvery(GET_SURVEY_DETAIL, fetchSurveyDetail)
+  yield takeEvery(GET_SURVEY_QUESTIONS, fetchSurveyQuestions)
   yield takeEvery(ADD_NEW_SURVEY, onAddNewSurvey);
   yield takeEvery(UPDATE_SURVEY, onUpdateSurvey);
   yield takeEvery(DELETE_SURVEY, onDeleteSurvey);

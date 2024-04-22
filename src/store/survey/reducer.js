@@ -10,7 +10,11 @@ import {
   UPDATE_SURVEY_SUCCESS,
   UPDATE_SURVEY_FAIL,
   DELETE_SURVEY_SUCCESS,
-  DELETE_SURVEY_FAIL
+  DELETE_SURVEY_FAIL,
+  GET_SURVEY_QUESTIONS_SUCCESS,
+  GET_SURVEY_QUESTIONS_FAIL,
+  SET_ACTIVE_SURVEY,
+  SET_ACTIVE_SURVEY_QUESTION,
 } from "./actionTypes"
 
 const INIT_STATE = {
@@ -18,6 +22,9 @@ const INIT_STATE = {
   surveyDetail: {},
   phones: [],
   error: {},
+  surveyQuestions: [],
+  activeSurvey: null,
+  activeSurveyQuestion: null
 }
 
 const Surveys = (state = INIT_STATE, action) => {
@@ -32,6 +39,30 @@ const Surveys = (state = INIT_STATE, action) => {
       return {
         ...state,
         error: action.payload,
+      }
+
+    case GET_SURVEY_QUESTIONS_SUCCESS:
+      return {
+        ...state,
+        surveyQuestions: action.payload,
+      }
+
+    case GET_SURVEY_QUESTIONS_FAIL:
+      return {
+        ...state,
+        error: action.payload,
+      }
+
+    case SET_ACTIVE_SURVEY:
+      return {
+        ...state,
+        activeSurvey: action.payload,
+      }
+
+    case SET_ACTIVE_SURVEY_QUESTION:
+      return {
+        ...state,
+        activeSurveyQuestion: action.payload,
       }
 
     case GET_PHONES_SUCCESS:
@@ -50,6 +81,7 @@ const Surveys = (state = INIT_STATE, action) => {
       return {
         ...state,
         surveys: [...state.surveys, action.payload],
+        success: action.payload
       }
 
     case ADD_SURVEY_FAIL:

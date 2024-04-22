@@ -177,7 +177,7 @@ const Header = props => {
 
             {/* <DeleteModal show={true} /> */}
 
-            <button
+            {/* <button
               type="button"
               className="btn btn-primary"
               onClick={() => {
@@ -186,12 +186,12 @@ const Header = props => {
               }}
             >
               Update Survey
-            </button>
+            </button> */}
 
             
-            <SurveyModal open={modal_mdotoggle} closeModal={() => mdo_modal()}></SurveyModal>
+            {/* <SurveyModal open={modal_mdotoggle} closeModal={() => mdo_modal()}></SurveyModal> */}
 
-            {/* <NotificationDropdown /> */}
+            <NotificationDropdown />
 
             <ProfileMenu />
 

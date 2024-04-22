@@ -2,6 +2,11 @@ import {
   GET_SURVEYS,
   GET_SURVEYS_FAIL,
   GET_SURVEYS_SUCCESS,
+  GET_SURVEY_QUESTIONS,
+  GET_SURVEY_QUESTIONS_SUCCESS,
+  GET_SURVEY_QUESTIONS_FAIL,
+  SET_ACTIVE_SURVEY,
+  SET_ACTIVE_SURVEY_QUESTION,
   GET_PHONES,
   GET_PHONES_SUCCESS,
   GET_PHONES_FAIL,
@@ -105,4 +110,29 @@ export const getSurveyDetailSuccess = surveys => ({
 export const getSurveyDetailFail = error => ({
   type: GET_SURVEY_DETAIL_FAIL,
   payload: error,
+})
+
+export const getSurveyQuestions = surveyId => ({
+  type: GET_SURVEY_QUESTIONS,
+  surveyId,
+})
+
+export const getSurveyQuestionsSuccess = questions => ({
+  type: GET_SURVEY_QUESTIONS_SUCCESS,
+  payload: questions,
+})
+
+export const getSurveyQuestionsFail = error => ({
+  type: GET_SURVEY_QUESTIONS_FAIL,
+  payload: error,
+})
+
+export const setActiveSurvey = surveyId => ({
+  type: SET_ACTIVE_SURVEY,
+  payload: surveyId,
+})
+
+export const setActiveSurveyQuestion = questionId => ({
+  type: SET_ACTIVE_SURVEY_QUESTION,
+  payload: questionId,
 })

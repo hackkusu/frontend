@@ -20,7 +20,7 @@ const HighlightResponses = () => {
     useEffect(() => {
         // Fetch data function
         const fetchData = () => {
-            get('/api/get_highlight_responses')
+            get('/api/calculate_aspects')
                 .then(data => setHighlightResponses(data))
                 .catch(error => console.error('Error fetching highlight responses:', error));
         };
@@ -68,13 +68,13 @@ const HighlightResponses = () => {
 
                 <SimpleBar style={{ maxHeight: '336px' }}>
                     {Object.entries(highlightResponses.messages).map(([sentiment, { created, message }], index) => (
-                        <li className="feed-item" key={index}>
-                            <div className="feed-item-list">
+                        // <li className="feed-item" key={index}>
+                            <div className="feed-item-list" key={index}>
                                 <p className="text-muted mb-1 font-size-13">{created}<small className="d-inline-block ms-1"></small></p>
                                 <p className="mt-0 mb-0">{message}</p>
                                 <span className={`badge ${sentimentBadgeColor(sentiment)} font-size-12`}>{sentiment}</span>
                             </div>
-                        </li>
+                        // </li>
                     ))}
                 </SimpleBar>
 

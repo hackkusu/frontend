@@ -18,6 +18,8 @@ import { withTranslation } from "react-i18next";
 import { connect } from "react-redux";
 
 
+
+
 const SurveyModal = (props) => {
 
   const dispatch = useDispatch();
@@ -156,7 +158,25 @@ const SurveyModal = (props) => {
               id="message-text"
             ></textarea>
           </div>
-          {/* </form> */}
+
+          {/* <div className="mb-3">
+                      <Label className="form-label">Textarea</Label>
+                        <Input
+                          name="textarea"
+                          placeholder=""
+                          type="textarea"
+                          rows="5"
+                          onChange={validationType.handleChange}
+                          onBlur={validationType.handleBlur}
+                          value={validationType.values.textarea || ""}
+                          invalid={
+                            validationType.touched.textarea && validationType.errors.textarea ? true : false
+                          }
+                        />
+                        {validationType.touched.textarea && validationType.errors.textarea ? (
+                          <FormFeedback type="invalid">{validationType.errors.textarea}</FormFeedback>
+                        ) : null}
+                    </div> */}
 
 
         </div>

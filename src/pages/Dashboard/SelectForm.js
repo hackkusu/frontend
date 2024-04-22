@@ -49,6 +49,7 @@ const MainSelectForm = (mainProps) => {
     return (
         <React.Fragment>
             <Col xl={6}></Col>
+            <Col xl={3}></Col>
             <Col xl={3}>
                 <div className="mb-3">
                     <select

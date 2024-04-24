@@ -25,36 +25,38 @@ jobs:
       - run: sudo apt-get update
       - run: sudo apt-get -y -qq install awscli
       # - run: ./deploy/prepare-feature-branch.sh
-      - run: AWS_ACCESS_KEY_ID=$S3_ID_2 AWS_SECRET_ACCESS_KEY=$S3_SECRET_2 AWS_DEFAULT_REGION=us-west-2 aws s3 sync --acl public-read ./build/ s3://data5570/
+      - run: AWS_ACCESS_KEY_ID=$S3_ID_2 AWS_SECRET_ACCESS_KEY=$S3_SECRET_2 AWS_DEFAULT_REGION=us-west-2 aws s3 sync --acl public-read ./build/ s3://pendien.com/
+      - run: AWS_ACCESS_KEY_ID=$S3_ID_2 AWS_SECRET_ACCESS_KEY=$S3_SECRET_2 AWS_DEFAULT_REGION=us-west-2 aws s3 sync --acl public-read ./marketingapp/ s3://marketing.pendien.com/
       - run: aws configure set preview.cloudfront true
-      - run: AWS_ACCESS_KEY_ID=$S3_ID_2 AWS_SECRET_ACCESS_KEY=$S3_SECRET_2 AWS_DEFAULT_REGION=us-west-2 aws cloudfront create-invalidation --distribution-id $DEV_CLOUDFRONT_ID_2 --paths '/*' || true
+      - run: AWS_ACCESS_KEY_ID=$S3_ID_2 AWS_SECRET_ACCESS_KEY=$S3_SECRET_2 AWS_DEFAULT_REGION=us-west-2 aws cloudfront create-invalidation --distribution-id $DEV_CLOUDFRONT_ID_MARKETING --paths '/*' || true
+      - run: AWS_ACCESS_KEY_ID=$S3_ID_2 AWS_SECRET_ACCESS_KEY=$S3_SECRET_2 AWS_DEFAULT_REGION=us-west-2 aws cloudfront create-invalidation --distribution-id $DEV_CLOUDFRONT_ID_MAIN --paths '/*' || true
       # - heroku/deploy-via-git:
       #     force: true # force push when pushing to the heroku remote, see: https://devcenter.heroku.com/articles/git
 
-  deploy-feat: # this can be any name you choose
-    executor: node/default
-    steps:
-      - attach_workspace:
-          at: ~/project
-      - run: sudo apt-get update
-      - run: sudo apt-get -y -qq install awscli
-      # - run: ./deploy/prepare-feature-branch.sh
-      - run: AWS_ACCESS_KEY_ID=$S3_ID_2 AWS_SECRET_ACCESS_KEY=$S3_SECRET_2 AWS_DEFAULT_REGION=us-west-2 aws s3 sync --acl public-read ./build/ s3://data5570/${CIRCLE_BRANCH}/
-      - run: aws configure set preview.cloudfront true
-      - run: AWS_ACCESS_KEY_ID=$S3_ID_2 AWS_SECRET_ACCESS_KEY=$S3_SECRET_2 AWS_DEFAULT_REGION=us-west-2 aws cloudfront create-invalidation --distribution-id $DEV_CLOUDFRONT_ID_2 --paths '/*' || true
-      # - heroku/deploy-via-git:
-      #     force: true # force push when pushing to the heroku remote, see: https://devcenter.heroku.com/articles/git
+  # deploy-feat: # this can be any name you choose
+  #   executor: node/default
+  #   steps:
+  #     - attach_workspace:
+  #         at: ~/project
+  #     - run: sudo apt-get update
+  #     - run: sudo apt-get -y -qq install awscli
+  #     # - run: ./deploy/prepare-feature-branch.sh
+  #     - run: AWS_ACCESS_KEY_ID=$S3_ID_2 AWS_SECRET_ACCESS_KEY=$S3_SECRET_2 AWS_DEFAULT_REGION=us-west-2 aws s3 sync --acl public-read ./build/ s3://data5570/${CIRCLE_BRANCH}/
+  #     - run: aws configure set preview.cloudfront true
+  #     - run: AWS_ACCESS_KEY_ID=$S3_ID_2 AWS_SECRET_ACCESS_KEY=$S3_SECRET_2 AWS_DEFAULT_REGION=us-west-2 aws cloudfront create-invalidation --distribution-id $DEV_CLOUDFRONT_ID_2 --paths '/*' || true
+  #     # - heroku/deploy-via-git:
+  #     #     force: true # force push when pushing to the heroku remote, see: https://devcenter.heroku.com/articles/git
 
 workflows:
   test_my_app:
     jobs:
       - build_and_test
-      - deploy-feat:
-          requires:
-            - build_and_test # only deploy if the build_and_test job has completed
-          filters:
-            branches:
-              ignore: ["main"] # only deploy when on main
+      # - deploy-feat:
+      #     requires:
+      #       - build_and_test # only deploy if the build_and_test job has completed
+      #     filters:
+      #       branches:
+      #         ignore: ["main"] # only deploy when on main
       - deploy:
           requires:
             - build_and_test # only deploy if the build_and_test job has completed

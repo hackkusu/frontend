@@ -18,7 +18,7 @@ import Breadcrumbs from "../../components/Common/Breadcrumb"
 
 const BasicElements = () => {
 
-  document.title=" Basic Elements | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Basic Elements | Pendien - Responsive Bootstrap 5 Admin Dashboard"
 
   const [customchk, setcustomchk] = useState(true)
   const [toggleSwitch, settoggleSwitch] = useState(true)
@@ -238,7 +238,7 @@ const BasicElements = () => {
                       <input
                         className="form-control form-control-color mw-100"
                         type="color"
-                        defaultValue="#556ee6"
+                        defaultValue="#000"
                         id="example-color-input"
                       />
                     </div>

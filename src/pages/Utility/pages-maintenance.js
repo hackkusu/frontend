@@ -9,7 +9,7 @@ import maintenance from "../../assets/images/maintenance.png";
 
 const PagesMaintenance = () => {
 
-  document.title=" Maintenance | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Maintenance | Pendien - Responsive Bootstrap 5 Admin Dashboard"
 
   useEffect(() => {
     document.body.className = "authentication-bg";

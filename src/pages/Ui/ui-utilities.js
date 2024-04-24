@@ -10,7 +10,7 @@ import Breadcrumbs from "../../components/Common/Breadcrumb";
 
 const UiUtilities = () => {
 
-    document.title=" Utilities | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
+    document.title=" Utilities | Pendien - Responsive Bootstrap 5 Admin Dashboard"
 
     return (
         <React.Fragment>

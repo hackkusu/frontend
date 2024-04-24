@@ -15,7 +15,7 @@ import Breadcrumbs from "../../components/Common/Breadcrumb";
 
 const MapsVector = () => {
 
-  document.title=" Vector | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Vector | Pendien - Responsive Bootstrap 5 Admin Dashboard"
 
   return (
     <React.Fragment>

@@ -15,7 +15,7 @@ import { connect } from "react-redux";
 
 const InvoiceDetail = props => {
 
-  document.title=" Invoice Detail | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Invoice Detail | Pendien - Responsive Bootstrap 5 Admin Dashboard"
 
   const params = props.router.params;
 

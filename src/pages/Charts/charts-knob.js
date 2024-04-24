@@ -8,7 +8,7 @@ import Breadcrumbs from "../../components/Common/Breadcrumb"
 
 const ChartsKnob = () => {
 
-  document.title=" Jquery Knob | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Jquery Knob | Pendien - Responsive Bootstrap 5 Admin Dashboard"
 
   const [value1, setvalue] = useState(35)
   const [value_cur, setvalue_cur] = useState(29)

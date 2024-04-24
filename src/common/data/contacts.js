@@ -121,7 +121,7 @@ const userProfile = {
     },
     {
       id: 2,
-      name: "HackUSU Admin",
+      name: "Pendien Admin",
       startDate: "06 Jun, 2020",
       status: "Open",
       badge: "primary",
@@ -135,7 +135,7 @@ const userProfile = {
     },
     {
       id: 4,
-      name: "HackUSU Landing",
+      name: "Pendien Landing",
       startDate: "13 May, 2020",
       status: "Complete",
       badge: "success",

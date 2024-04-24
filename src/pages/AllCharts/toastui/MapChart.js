@@ -21,7 +21,7 @@ var theme = {
     },
   },
   series: {
-    startColor: "#556ee6",
+    startColor: "#000",
     endColor: "#34c38f",
     overColor: "#75b5aa",
     borderColor: "#F4511E",

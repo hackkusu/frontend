@@ -16,7 +16,7 @@ import logolight from "../../assets/images/logo-light.png"
 
 const Recoverpw = () => {
 
-  document.title=" Recover Password | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Recover Password | Pendien - Responsive Bootstrap 5 Admin Dashboard"
 
   useEffect(() => {
     document.body.className = "authentication-bg";
@@ -44,7 +44,7 @@ const Recoverpw = () => {
 
                     <div className="text-center mt-2">
                       <h5 className="text-primary">Reset Password</h5>
-                      <p className="text-muted">Reset Password with HackUSU.</p>
+                      <p className="text-muted">Reset Password with Pendien.</p>
                     </div>
                     <div className="p-2 mt-4">
                       <div className="alert alert-success text-center mb-4" role="alert">
@@ -77,7 +77,7 @@ const Recoverpw = () => {
                 </div>
                 <div className="mt-5 text-center">
                   <p>
-                    © {new Date().getFullYear()} HackUSU. Crafted with{" "}
+                    © {new Date().getFullYear()} Pendien. Crafted with{" "}
                     <i className="mdi mdi-heart text-danger" /> by Themesbrand
                   </p>
                 </div>

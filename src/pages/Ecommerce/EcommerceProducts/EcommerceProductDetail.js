@@ -35,7 +35,7 @@ import withRouter from "../../../components/Common/withRouter";
 
 const EcommerceProductDetail = props => {
 
-  document.title=" Product Detail | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Product Detail | Pendien - Responsive Bootstrap 5 Admin Dashboard"
 
   const {
     product,

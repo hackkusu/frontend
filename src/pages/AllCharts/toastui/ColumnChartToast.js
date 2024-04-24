@@ -42,7 +42,7 @@ const theme = {
     }
   },
   series: {
-    colors: ["#34c38f", "#556ee6", "#f46a6a"]
+    colors: ["#34c38f", "#000", "#f46a6a"]
   }
 }
 TuiChart.registerTheme("minibletheme", theme)

@@ -33,7 +33,7 @@ const ColumnWithDataLabels = () => {
       },
     },
 
-    colors: ["#556ee6"],
+    colors: ["#000"],
     grid: {
       borderColor: "#f1f1f1",
     },

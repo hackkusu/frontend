@@ -21,7 +21,7 @@ import avatar8 from "../../assets/images/users/avatar-8.jpg";
 
 const FileManager = () => {
 
-    document.title=" File Manager | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
+    document.title=" File Manager | Pendien - Responsive Bootstrap 5 Admin Dashboard"
 
     const [selectedFiles, setselectedFiles] = useState([]);
 

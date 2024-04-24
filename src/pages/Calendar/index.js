@@ -47,7 +47,7 @@ import { createSelector } from "reselect";
 
 const Calender = (props) => {
 
-  document.title=" Calendar | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Calendar | Pendien - Responsive Bootstrap 5 Admin Dashboard"
 
   const dispatch = useDispatch();
 
@@ -261,7 +261,7 @@ const Calender = (props) => {
       <div className="page-content">
         <Container fluid={true}>
           {/* Render Breadcrumb */}
-          <Breadcrumbs title="HackUSU" breadcrumbItem="Calendar" />
+          <Breadcrumbs title="Pendien" breadcrumbItem="Calendar" />
           <Row>
             <Col className="col-12">
               <Row>

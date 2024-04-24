@@ -21,7 +21,7 @@ import Breadcrumbs from "../../components/Common/Breadcrumb";
 
 const UiOffcanvas = () => {
 
-  document.title=" Offcanvas | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Offcanvas | Pendien - Responsive Bootstrap 5 Admin Dashboard"
 
   const [open, setOpen] = useState(false);
   const [isTop, setIsTop] = useState(false);

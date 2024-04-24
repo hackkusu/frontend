@@ -18,7 +18,7 @@ import MaterialInput from "@material-ui/core/Input"
 
 const FormMask = () => {
 
-  document.title=" Form Mask | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Form Mask | Pendien - Responsive Bootstrap 5 Admin Dashboard"
 
 
   const Repeat = props => (

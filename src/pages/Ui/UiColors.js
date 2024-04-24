@@ -6,7 +6,7 @@ import Breadcrumbs from "../../components/Common/Breadcrumb";
 
 const UiColors = () => {
 
-  document.title=" Colors | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Colors | Pendien - Responsive Bootstrap 5 Admin Dashboard"
 
   return (
     <React.Fragment>

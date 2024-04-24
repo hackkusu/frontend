@@ -7,7 +7,7 @@ import Breadcrumbs from "../../components/Common/Breadcrumb"
 
 const UiVideo = () => {
 
-  document.title=" Video | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Video | Pendien - Responsive Bootstrap 5 Admin Dashboard"
 
   return (
     <React.Fragment>

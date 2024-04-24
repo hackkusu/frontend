@@ -6,7 +6,7 @@ import Breadcrumbs from "../../components/Common/Breadcrumb"
 
 const PagesStarter = () => {
 
-  document.title=" Starter | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Starter | Pendien - Responsive Bootstrap 5 Admin Dashboard"
 
   return (
     <React.Fragment>

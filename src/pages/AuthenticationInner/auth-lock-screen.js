@@ -14,7 +14,7 @@ import { Link } from "react-router-dom"
 
 const LockScreen = () => {
 
-  document.title=" LockScreen | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" LockScreen | Pendien - Responsive Bootstrap 5 Admin Dashboard"
 
 
   const validation = useFormik({
@@ -107,7 +107,7 @@ const LockScreen = () => {
               </Card>
               <div className="mt-5 text-center">
                 <p>
-                  © {new Date().getFullYear()} HackUSU. Crafted with{" "}
+                  © {new Date().getFullYear()} Pendien. Crafted with{" "}
                   <i className="mdi mdi-heart text-danger" /> by Themesbrand
                   </p>
               </div>

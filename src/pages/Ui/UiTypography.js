@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 
 const UiTypography = () => {
 
-  document.title=" Typography | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Typography | Pendien - Responsive Bootstrap 5 Admin Dashboard"
 
   return (
     <React.Fragment>

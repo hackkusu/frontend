@@ -21,7 +21,7 @@ import Breadcrumbs from "../../components/Common/Breadcrumb"
 
 const UiDropdown = () => {
 
-  document.title=" Dropdowns | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Dropdowns | Pendien - Responsive Bootstrap 5 Admin Dashboard"
 
   const [singlebtn, setSinglebtn] = useState(false)
   const [singlebtn1, setSinglebtn1] = useState(false)

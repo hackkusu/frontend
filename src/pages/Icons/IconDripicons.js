@@ -7,7 +7,7 @@ import Breadcrumbs from "../../components/Common/Breadcrumb"
 
 const IconDripicons = () => {
 
-  document.title=" Dripicons | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Dripicons | Pendien - Responsive Bootstrap 5 Admin Dashboard"
 
   return (
     <React.Fragment>

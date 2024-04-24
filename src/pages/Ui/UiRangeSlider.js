@@ -8,7 +8,7 @@ import "react-rangeslider/lib/index.css";
 
 const UiRangeSlider = () => {
 
-  document.title=" Range Slider | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Range Slider | Pendien - Responsive Bootstrap 5 Admin Dashboard"
 
   const formatkg = value => "$ " + value;
   const formatdollar = value => value + " kg";

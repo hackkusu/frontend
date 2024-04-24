@@ -114,7 +114,7 @@ const EmailAlertTemplte = props => {
                                   fontWeight: "500",
                                   textAlign: "center",
                                   borderRadius: "3px 3px 0px 0px",
-                                  backgroundColor: "#556ee6",
+                                  backgroundColor: "#000",
                                   margin: "0",
                                   padding: "20px",
                                 }}
@@ -307,7 +307,7 @@ const EmailAlertTemplte = props => {
                                         }}
                                         valign="top"
                                       >
-                                        Thanks for choosing <b>HackUSU</b>{" "}
+                                        Thanks for choosing <b>Pendien</b>{" "}
                                           Admin.
                                         </td>
                                     </tr>
@@ -333,7 +333,7 @@ const EmailAlertTemplte = props => {
                                         }}
                                         valign="top"
                                       >
-                                        <b>HackUSU</b>
+                                        <b>Pendien</b>
                                         <p>Support Team</p>
                                       </td>
                                     </tr>
@@ -361,7 +361,7 @@ const EmailAlertTemplte = props => {
                                         }}
                                         valign="top"
                                       >
-                                        © {new Date().getFullYear()} HackUSU
+                                        © {new Date().getFullYear()} Pendien
                                         </td>
                                     </tr>
                                   </tbody>

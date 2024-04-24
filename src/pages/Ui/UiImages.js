@@ -23,7 +23,7 @@ import Breadcrumbs from "../../components/Common/Breadcrumb";
 
 const UiImages = () => {
 
-  document.title=" Images | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Images | Pendien - Responsive Bootstrap 5 Admin Dashboard"
 
   return (
     <React.Fragment>

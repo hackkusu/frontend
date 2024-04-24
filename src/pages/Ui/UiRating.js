@@ -9,7 +9,7 @@ import { Rating } from "react-simple-star-rating";
 
 const UiRating = () => {
 
-  document.title=" Rating | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Rating | Pendien - Responsive Bootstrap 5 Admin Dashboard"
 
 
   return (

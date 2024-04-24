@@ -16,7 +16,7 @@ import { getUsers } from "../../store/contacts/actions"
 
 const ContactsGrid = props => {
 
-  document.title=" User Grid | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" User Grid | Pendien - Responsive Bootstrap 5 Admin Dashboard"
 
   const { users, onGetUsers } = props
 

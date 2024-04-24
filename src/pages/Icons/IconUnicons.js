@@ -7,7 +7,7 @@ import Breadcrumbs from "../../components/Common/Breadcrumb"
 
 const IconBoxicons = props => {
 
-  document.title=" Unicons | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Unicons | Pendien - Responsive Bootstrap 5 Admin Dashboard"
 
   return (
     <React.Fragment>

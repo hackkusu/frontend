@@ -30,7 +30,7 @@ import { facebook, google } from "../../config"
 
 const Login = (props) => {
 
-  document.title=" Login | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Login | Pendien - Responsive Bootstrap 5 Admin Dashboard"
 
   const dispatch = useDispatch();
 
@@ -124,7 +124,7 @@ const Login = (props) => {
               <Card>
                 <CardBody className="p-4">
                   <div className="text-center mt-2">
-                    <h5 className="text-primary">Welcome Back !</h5>
+                    <h5 className="text-primary">Welcome Back!</h5>
                     <p className="text-muted">Sign in to continue</p>
                   </div>
                   <div className="p-2 mt-4">
@@ -254,7 +254,7 @@ const Login = (props) => {
                 </CardBody>
               </Card>
               {/* <div className="mt-5 text-center">
-                <p>© {new Date().getFullYear()} HackUSU. Crafted with <i
+                <p>© {new Date().getFullYear()} Pendien. Crafted with <i
                   className="mdi mdi-heart text-danger"></i> by Themesbrand
                         </p>
               </div> */}

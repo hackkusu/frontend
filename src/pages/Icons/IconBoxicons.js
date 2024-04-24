@@ -6,7 +6,7 @@ import { Row, Col, Card, CardBody, CardTitle, Container } from "reactstrap";
 import Breadcrumbs from "../../components/Common/Breadcrumb";
 
 const IconBoxicons = props => {
-  document.title=" Boxicons | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Boxicons | Pendien - Responsive Bootstrap 5 Admin Dashboard"
 
   return (
     <React.Fragment>

@@ -7,8 +7,8 @@ const DountChart = () => {
     datasets: [
       {
         data: [300, 210],
-        backgroundColor: ["#556ee6", "#ebeff2"],
-        hoverBackgroundColor: ["#556ee6", "#ebeff2"],
+        backgroundColor: ["#000", "#ebeff2"],
+        hoverBackgroundColor: ["#000", "#ebeff2"],
         hoverBorderColor: "#fff",
       },
     ],

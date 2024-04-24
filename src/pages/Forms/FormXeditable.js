@@ -16,7 +16,7 @@ import Breadcrumbs from "../../components/Common/Breadcrumb"
 
 const FormXeditable = () => {
 
-  document.title=" Form Xeditable | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Form Xeditable | Pendien - Responsive Bootstrap 5 Admin Dashboard"
 
   return (
     <React.Fragment>

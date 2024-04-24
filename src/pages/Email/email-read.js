@@ -18,7 +18,7 @@ import EmailToolbar from "./email-toolbar"
 
 const EmailRead = () => {
 
-  document.title=" Read Email | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Read Email | Pendien - Responsive Bootstrap 5 Admin Dashboard"
 
   return (
     <React.Fragment>

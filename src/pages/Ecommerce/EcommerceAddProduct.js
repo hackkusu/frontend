@@ -18,7 +18,7 @@ import Breadcrumbs from "../../components/Common/Breadcrumb";
 
 const EcommerceAddProduct = () => {
 
-  document.title=" Add Product | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Add Product | Pendien - Responsive Bootstrap 5 Admin Dashboard"
 
   const [selectedFiles, setselectedFiles] = useState([]);
   const [isOpen, setIsOpen] = useState(true);

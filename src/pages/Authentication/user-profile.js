@@ -32,7 +32,7 @@ import { editProfile, resetProfileFlag } from "../../store/actions";
 
 const UserProfile = props => {
 
-  document.title=" Profile | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Profile | Pendien - Responsive Bootstrap 5 Admin Dashboard"
 
 
   const dispatch = useDispatch();
@@ -105,7 +105,7 @@ const UserProfile = props => {
       <div className="page-content">
         <Container fluid>
           {/* Render Breadcrumb */}
-          <Breadcrumb title="HackUSU" breadcrumbItem="Profile" />
+          <Breadcrumb title="Pendien" breadcrumbItem="Profile" />
 
           <Row>
             <Col lg="12">

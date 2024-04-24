@@ -72,7 +72,7 @@ $apex-grid-color:  var(--#{$prefix}apex-grid-color);
 
 // auth bg
 // $auth-bg: 50a5f1 
-$auth-bg: rgba(43,46,59,1);
+$auth-bg: $black;
 // $auth-bg: rgba(137,142,169,1);
 // $auth-bg: rgba(91,116,233,1);
 // $auth-bg: rgba(80,165,241,1);
@@ -92,17 +92,17 @@ $btn-close-bg-dark:          url("data:image/svg+xml,<svg xmlns='http://www.w3.o
 // Color system
 
 // scss-docs-start gray-color-variables
-$white:    #fff;
-$gray-100: #f8f9fa;
-$gray-200: #f5f6f8;
-$gray-300: #f6f6f6;
-$gray-400: #ced4da;
-$gray-500: #adb5bd;
-$gray-600: #74788d;
-$gray-700: #343747;
-$gray-800: #2b2e3b;
-$gray-900: #22252f;
-$black:    #000;
+$white:    #ffffff; // No change, pure white
+$gray-100: #f8f8f8; // Adjusted to pure light gray
+$gray-200: #f0f0f0; // A slightly darker shade of light gray
+$gray-300: #e8e8e8; // A neutral light gray
+$gray-400: #d0d0d0; // Medium light gray
+$gray-500: #b8b8b8; // True medium gray
+$gray-600: #909090; // Medium dark gray
+$gray-700: #686868; // A darker shade of gray
+$gray-800: #505050; // Even darker, approaching black
+$gray-900: #282828; // Very dark gray, almost black
+$black:    #000000; // No change, pure black
 // scss-docs-end gray-color-variables
 
 // fusv-disable
@@ -129,7 +129,7 @@ $pink:    #e83e8c;
 $red:     #f46a6a;
 $orange:  #f1734f;
 $yellow:  #f1b44c;
-$green:   #34c38f;
+$green:   #0dff0f;
 $teal:    #050505;
 $cyan:    #50a5f1;
 // scss-docs-end color-variables
@@ -384,7 +384,7 @@ $cyans: (
 // fusv-enable
 
 // scss-docs-start theme-color-variables
-$primary:       $blue;
+$primary:       $black;
 $secondary:     $gray-600;
 $success:       $green;
 $info:          $cyan;
@@ -428,7 +428,7 @@ $info-bg-subtle:          tint-color($info, 80%);
 $warning-bg-subtle:       tint-color($warning, 80%);
 $danger-bg-subtle:        tint-color($danger, 80%);
 $light-bg-subtle:         mix($gray-100, $white);
-$dark-bg-subtle:          $gray-400;
+$dark-bg-subtle:          $black;
 // scss-docs-end theme-bg-subtle-variables
 
 // scss-docs-start theme-border-subtle-variables

@@ -10,7 +10,7 @@ const NonAuthLayout = (props) => {
   //   let currentage = title.charAt(1).toUpperCase() + title.slice(2);
 
   //   document.title =
-  //     currentage + " | HackUSU - Responsive Bootstrap 5 Admin Dashboard";
+  //     currentage + " | Pendien - Responsive Bootstrap 5 Admin Dashboard";
   // }, [path.pathname]);
 
   return <React.Fragment>{props.children}</React.Fragment>;

@@ -22,7 +22,7 @@ import logoSm from "../../assets/images/logo-sm.png";
 
 const UiToasts = () => {
 
-    document.title=" Toasts | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
+    document.title=" Toasts | Pendien - Responsive Bootstrap 5 Admin Dashboard"
 
     const [toast, setToast] = useState(false);
     const [toast1, setToast1] = useState(false);
@@ -76,7 +76,7 @@ const UiToasts = () => {
                                         <Toast isOpen={toast}>
                                             <ToastHeader toggle={toggleToast}>
                                                 <img src={logoSm} alt="" className="me-2" height="18" />
-                                                HackUSU
+                                                Pendien
                                                 <small className="text-muted ms-1">- 11 mins ago</small>
                                             </ToastHeader>
                                             <ToastBody>
@@ -247,7 +247,7 @@ const UiToasts = () => {
                                         <Toast isOpen={toast5} className="fade show">
                                             <ToastHeader toggle={() => setToast5(!toast5)}>
                                                 <img src={logoSm} alt="" className="me-2" height="18"/>
-                                                    <strong className="me-auto">HackUSU</strong>
+                                                    <strong className="me-auto">Pendien</strong>
                                                     <small style={{ marginLeft: "145px" }}className="text-muted">11 mins ago</small>                                                   
                                             </ToastHeader>
                                             <ToastBody className="toast-body">
@@ -271,7 +271,7 @@ const UiToasts = () => {
                                         <Toast isOpen={toast6} className="fade show">
                                             <ToastHeader toggle={() => setToast6(!toast6)}>
                                                 <img src={logoSm} alt="" className="me-2" height="18" />
-                                                <strong className="me-auto">HackUSU</strong>
+                                                <strong className="me-auto">Pendien</strong>
                                                 <small style={{ marginLeft: "145px" }} className="text-muted">11 mins ago</small>
                                             </ToastHeader>
                                             <ToastBody>
@@ -299,7 +299,7 @@ const UiToasts = () => {
                                                 <Toast isOpen={toast7} className="fade show">
                                                     <ToastHeader toggle={() => setToast7(!toast7)}>
                                                         <img src={logoSm} alt="" className="me-2" height="18" />
-                                                        <strong className="me-auto">HackUSU</strong>
+                                                        <strong className="me-auto">Pendien</strong>
                                                         <small style={{ marginLeft: "155px" }} className="text-muted">just now</small>
                                                     </ToastHeader>
                                                     <ToastBody>
@@ -311,7 +311,7 @@ const UiToasts = () => {
                                                     data-bs-autohide="false" aria-atomic="true">
                                                     <ToastHeader toggle={() => setToast8(!toast8)}>
                                                         <img src={logoSm} alt="" className="me-2" height="18" />
-                                                        <strong className="me-auto">HackUSU</strong>
+                                                        <strong className="me-auto">Pendien</strong>
                                                         <small style={{ marginLeft: "155px" }} className="text-muted">2 sec ago</small>
                                                     </ToastHeader>
                                                     <ToastBody>
@@ -478,7 +478,7 @@ const UiToasts = () => {
                                             <Toast isOpen={toast12}>
                                                 <ToastHeader toggle={() => setToast12(!toast12)}>
                                                     <img src={logoSm} className="rounded me-2" alt="..." height="20" />
-                                                    <strong className="me-auto">HackUSU</strong>
+                                                    <strong className="me-auto">Pendien</strong>
                                                     <small style={{ marginLeft: "150px" }}>11 mins ago</small>                                                    
                                                 </ToastHeader>
                                                 <ToastBody>

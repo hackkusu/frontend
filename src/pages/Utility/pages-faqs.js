@@ -20,7 +20,7 @@ import Breadcrumbs from "../../components/Common/Breadcrumb"
 
 const PagesFaqs = () => {
 
-  document.title=" FAQs | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" FAQs | Pendien - Responsive Bootstrap 5 Admin Dashboard"
 
   const [isOpenCollapse1, setIsOpenCollapse1] = useState(true)
 

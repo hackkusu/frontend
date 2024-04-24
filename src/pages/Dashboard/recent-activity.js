@@ -31,7 +31,7 @@ const RecentActivity = () => {
                     </li>
                     <li className="feed-item">
                         <p className="text-muted mb-1 font-size-13">22 Jul, 2020 <small className="d-inline-block ms-1">12:36 pm</small></p>
-                        <p className="mt-0 mb-0">I found the lecture to be a good refresher on some of the basics but im looking forward to more engaging content in future sessions."</p>
+                        <p className="mt-0 mb-0">I found the lecture to be a good refresher on some of the basics but I'm looking forward to more engaging content in future sessions.</p>
                         <span className="badge bg-soft-warning font-size-12">Nuetral</span>
                     </li>
                     <li className="feed-item">

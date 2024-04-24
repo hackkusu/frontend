@@ -16,7 +16,7 @@ import Candlestick from "../AllCharts/echart/candlestickchart"
 
 const EChart = () => {
 
-  document.title=" EChart | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" EChart | Pendien - Responsive Bootstrap 5 Admin Dashboard"
 
   return (
     <React.Fragment>

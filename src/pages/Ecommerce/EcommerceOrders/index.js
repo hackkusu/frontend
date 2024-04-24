@@ -47,7 +47,7 @@ import DeleteModal from "../../../components/Common/DeleteModal";
 
 function DatatableTables() {
 
-  document.title=" Orders | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Orders | Pendien - Responsive Bootstrap 5 Admin Dashboard"
 
   const [modal, setModal] = useState(false);
   const [isEdit, setIsEdit] = useState(false);

@@ -9,7 +9,7 @@ import Breadcrumbs from "../../components/Common/Breadcrumb";
 
 const UiNotifications = () => {
 
-  document.title=" Notifications | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Notifications | Pendien - Responsive Bootstrap 5 Admin Dashboard"
 
   const [showEasing, setshowEasing] = useState("swing");
   const [hideEasing, sethideEasing] = useState("linear");

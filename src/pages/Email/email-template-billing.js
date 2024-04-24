@@ -173,7 +173,7 @@ const EmailTemplateBilling = props => {
                                           Thanks for using{" "}
                                           <b style={{ fontWeight: "600" }}>
                                             {" "}
-                                              HackUSU
+                                              Pendien
                                             </b>
                                             .
                                           </h2>
@@ -578,7 +578,7 @@ const EmailTemplateBilling = props => {
                                         align="center"
                                         valign="top"
                                       >
-                                        HackUSU Inc. 2896 Howell Rd,
+                                        Pendien Inc. 2896 Howell Rd,
                                         Russellville, AR, 72823
                                         </td>
                                     </tr>
@@ -606,7 +606,7 @@ const EmailTemplateBilling = props => {
                                         }}
                                         valign="top"
                                       >
-                                        © {new Date().getFullYear()} HackUSU
+                                        © {new Date().getFullYear()} Pendien
                                         </td>
                                     </tr>
                                   </tbody>

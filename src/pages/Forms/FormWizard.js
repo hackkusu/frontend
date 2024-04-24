@@ -24,7 +24,7 @@ import Breadcrumbs from "../../components/Common/Breadcrumb"
 
 const FormWizard = () => {
 
-  document.title=" Form Wizard | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Form Wizard | Pendien - Responsive Bootstrap 5 Admin Dashboard"
 
   const [activeTab, setactiveTab] = useState(1)
   const [activeTabVartical, setoggleTabVertical] = useState(1)

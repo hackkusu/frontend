@@ -7,7 +7,7 @@ import errorImg from "../../assets/images/404-error.png"
 
 const Pages404 = () => {
 
-  document.title=" Error 404 | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Error 404 | Pendien - Responsive Bootstrap 5 Admin Dashboard"
 
   useEffect(() => {
     document.body.className = "authentication-bg";

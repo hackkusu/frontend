@@ -10,7 +10,7 @@ import src from "../../assets/images/small/img-1.jpg"
 
 const UiPlaceholders = () => {
 
-  document.title=" Placeholder | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Placeholder | Pendien - Responsive Bootstrap 5 Admin Dashboard"
 
   return (
     <React.Fragment>

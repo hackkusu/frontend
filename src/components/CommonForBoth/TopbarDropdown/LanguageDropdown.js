@@ -53,7 +53,7 @@ const LanguageDropdown = () => {
             >
               <img
                 src={get(languages, `${key}.flag`)}
-                alt="HackUSU"
+                alt="Pendien"
                 className="me-1"
                 height="12"
               />

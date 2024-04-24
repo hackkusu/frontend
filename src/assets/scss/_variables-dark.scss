@@ -25,7 +25,7 @@ $success-bg-subtle-dark:            shade-color($success, 60%);
 $info-bg-subtle-dark:               shade-color($info, 60%);
 $warning-bg-subtle-dark:            shade-color($warning, 60%);
 $danger-bg-subtle-dark:             shade-color($danger, 60%);
-$light-bg-subtle-dark:              $gray-800;
+$light-bg-subtle-dark:              $black;
 $dark-bg-subtle-dark:               mix($gray-800, $black);
 // scss-docs-end theme-bg-subtle-dark-variables
 
@@ -40,9 +40,9 @@ $light-border-subtle-dark:          $gray-700;
 $dark-border-subtle-dark:           $gray-800;
 // scss-docs-end theme-border-subtle-dark-variables
 
-$light-dark:                        $gray-700;
-$body-color-dark:                   $gray-500;
-$body-bg-dark:                      $gray-900;
+$light-dark:                        $white;
+$body-color-dark:                   $white;
+$body-bg-dark:                      $gray-400;
 $body-secondary-color-dark:         rgba($body-color-dark, .75);
 $body-secondary-bg-dark:            $gray-800;
 $body-tertiary-color-dark:          rgba($body-color-dark, .5);
@@ -87,4 +87,4 @@ $accordion-button-active-icon-dark:  url("data:image/svg+xml,<svg xmlns='http://
 
 // Topbar
 $header-item-color-dark:               #e9ecef;
-$menu-item-color-dark:                 #898fa9;
+$menu-item-color-dark:                 #949599;

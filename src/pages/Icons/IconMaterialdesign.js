@@ -7,7 +7,7 @@ import Breadcrumbs from "../../components/Common/Breadcrumb"
 
 const IconMaterialdesign = props => {
 
-  document.title=" Material Design | HackUSU - Responsive Bootstrap 5 Admin Dashboard"
+  document.title=" Material Design | Pendien - Responsive Bootstrap 5 Admin Dashboard"
 
   useEffect(() => {
     function isNew(icon) {

@@ -8,6 +8,7 @@ const token = accessToken
 
 //apply base url for axios
 export const API_URL = "https://api.pendien.com"
+export const PUSHER_CLIENT_ID = "c0e6fff6b215332d9352"
 
 const axiosApi = axios.create({
   baseURL: API_URL,

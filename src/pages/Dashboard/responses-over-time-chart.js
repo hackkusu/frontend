@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import ReactApexChart from "react-apexcharts";
 import { Card, CardBody, DropdownToggle, DropdownMenu, DropdownItem, UncontrolledDropdown, Col, Row } from "reactstrap";
 import Pusher from 'pusher-js';
-import { get } from "../../helpers/api_helper";
+import { PUSHER_CLIENT_ID, get } from "../../helpers/api_helper";
 
 const ResponsesOverTimeChart = () => {
     const [series, setSeries] = useState([]);
@@ -101,7 +101,7 @@ const ResponsesOverTimeChart = () => {
         fetchInitialData();
 
         // Pusher Configuration
-        const pusher = new Pusher('1bbaecb26111a9ad219d', {
+        const pusher = new Pusher(PUSHER_CLIENT_ID, {
             cluster: 'us3',
             encrypted: true
         });

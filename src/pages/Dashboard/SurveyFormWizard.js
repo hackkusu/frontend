@@ -9,7 +9,7 @@ import {
 } from "reactstrap";
 import classnames from "classnames";
 import { Link } from "react-router-dom";
-import { API_URL } from '../../helpers/api_helper';
+import { API_URL, PUSHER_CLIENT_ID } from '../../helpers/api_helper';
 // Import Breadcrumb (assumed to be already implemented)
 import Breadcrumbs from "../../components/Common/Breadcrumb";
 
@@ -130,7 +130,7 @@ const FormWizard = (mainProps) => {
         // fetchData();
 
         // // Pusher Configuration
-        // const pusher = new Pusher('1bbaecb26111a9ad219d', {
+        // const pusher = new Pusher(PUSHER_CLIENT_ID, {
         //     cluster: 'us3',
         //     encrypted: true
         // });

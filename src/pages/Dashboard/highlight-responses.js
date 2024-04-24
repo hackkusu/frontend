@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Card, CardBody, DropdownToggle, DropdownMenu, DropdownItem, UncontrolledDropdown } from "reactstrap";
 import SimpleBar from "simplebar-react";
 import Pusher from 'pusher-js';
-import { get } from "../../helpers/api_helper";
+import { PUSHER_CLIENT_ID, get } from "../../helpers/api_helper";
 
 const HighlightResponses = () => {
     const [highlightResponses, setHighlightResponses] = useState({ top_aspects: [], messages: {} });
@@ -29,7 +29,7 @@ const HighlightResponses = () => {
         fetchData();
 
         // Pusher Configuration
-        const pusher = new Pusher('1bbaecb26111a9ad219d', {
+        const pusher = new Pusher(PUSHER_CLIENT_ID, {
             cluster: 'us3',
             encrypted: true
         });

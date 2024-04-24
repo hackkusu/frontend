@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Card, CardBody, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem, Row, Col, Progress } from "reactstrap";
-import { get } from "../../helpers/api_helper";
+import { PUSHER_CLIENT_ID, get } from "../../helpers/api_helper";
 import Pusher from 'pusher-js';
 
 const SentimentOverviewChart = () => {
@@ -17,7 +17,7 @@ const SentimentOverviewChart = () => {
         fetchInitialData();
 
         // Set up Pusher for real-time updates
-        const pusher = new Pusher('1bbaecb26111a9ad219d', {
+        const pusher = new Pusher(PUSHER_CLIENT_ID, {
             cluster: 'us3',
             encrypted: true
         });

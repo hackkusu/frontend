@@ -5,7 +5,7 @@ import { Dropdown, DropdownToggle, DropdownMenu, Row, Col } from "reactstrap"
 import SimpleBar from "simplebar-react"
 
 import Pusher from 'pusher-js';
-import { get } from "../../../helpers/api_helper";
+import { PUSHER_CLIENT_ID, get } from "../../../helpers/api_helper";
 
 //Import images
 import avatar3 from "../../../assets/images/users/avatar-3.jpg"
@@ -33,7 +33,7 @@ const NotificationDropdown = props => {
     // fetchInitialData();
 
     // Pusher Configuration
-    const pusher = new Pusher('1bbaecb26111a9ad219d', {
+    const pusher = new Pusher(PUSHER_CLIENT_ID, {
       cluster: 'us3',
       encrypted: true
     });
